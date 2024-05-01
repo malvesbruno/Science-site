@@ -60,9 +60,7 @@ body.space .button_pos{
     drop-shadow(0px 0px 10px #eb0000);
 }
 
-img{
-    overflow: hidden;
-}
+
 
 .sun:hover{
     width: 4%;
@@ -1156,10 +1154,10 @@ body.undersea section h1{
 
 .cloud{
     position: absolute;
-    left: -20%;
+    left: -4%;
     top:0;
-    height: 150vh;
-    width: 200%;
+    height: 100%;
+    width: 104%;
     z-index: -2;
 }
 
@@ -1651,6 +1649,14 @@ body.on .bulb span:nth-child(2){
 
 
 @media screen and (max-width: 700px){
+    html, body{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
     body.undersea section h1{
         font-size: 50px;
     }
@@ -1671,6 +1677,14 @@ body.on .bulb span:nth-child(2){
 }
 
 @media screen and (max-width: 426px){
+    html, body{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
     .menubar{
         width: 90%;
     }
@@ -1715,6 +1729,14 @@ body.on .bulb span:nth-child(2){
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px){
+    html, body{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
     body.space .planets_line{
         width: 10%;
     }
@@ -1725,6 +1747,14 @@ body.on .bulb span:nth-child(2){
 }
 
 @media screen and (max-width: 426px){
+    html, body{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
     body.space .planets_line{
         display: none;
         position: absolute;
