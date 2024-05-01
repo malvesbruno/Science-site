@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/style.css" /> 
+</head>
+<body class="space">
+    <img src="static/img/sky.jpg" class="universe" alt="" height="100%" width="100%" style="position: absolute; opacity: 30%;" id="space_sky">
+    <div id="circle-orbit-container">
+        <div id="neptune-orbit">
+            <img src="static/img/netuno.png" class="neptune-orbit-cirlces" id="neptune">
+        </div>
+        <div id="uranus-orbit">
+            <img src="static/img/uranus.png" class="uranus-orbit-cirlces" id="uranus">
+        </div>
+        <div id="saturn-orbit">
+            <img src="static/img/saturn.png" class="saturn-orbit-cirlces" id="saturn">
+        </div>
+        <div id="jupiter-orbit">
+            <img src="static/img/jupiter.png" class="jupiter-orbit-cirlces" id="jupiter">
+        </div>
+        <div id="mars-orbit">
+            <img src="static/img/mars.png" class="mars-orbit-cirlces" id="mars">
+        </div>
+        <div id="earth-orbit">
+            <img src="static/img/earth (2).png" class="earth-orbit-cirlces" id="earth">
+        </div>
+        <div id="venus-orbit">
+            <img src="static/img/venus.png" class="venus-orbit-cirlces" id="venus">
+        </div>
+        <div id="mercury-orbit">
+            <img src="static/img/mercury.png" class="mercury-orbit-cirlces" id="mercury">
+        </div>
+        <img src="static/img/black_hole.png" alt="" class="black_hole" id="black_hole">
+        <img src="static/img/andrometa.png" alt="" class="andrometa" id="andrometa">
+        <img src="static/img/nebula.png" alt="" class="nebula" id="nebula">
+    </div>
+    <section class="planet_info" id="planet_info">
+        <button class="close_button" id="close_button">
+            <span class="material-symbols--close"></span>
+        </button>
+        <h1 class="planet_title" id="planet_name_show" style="top:5%;">
+            EARTH
+        </h1>
+        <section class="image_planet" id="display_image_holder">
+            <img src="static/img/earth (2).png" alt="planet" id="planet_display">
+            <img src="static/img/moon.png" alt="planet" id="moon_display">
+        </section>
+        <section class="table_planet" id="display_table_holder">
+            <table id="table_planet" style="display: none;">
+                <th>info</th>
+                <tr>
+                    <td class="index">age</td>
+                    <td id="age">4.5 billion years</td>
+                </tr>
+                <tr>
+                    <td class="index">rotation time</td>
+                    <td id="rotation_time">23h 56min</td>
+                </tr>
+                <tr>
+                    <td class="index">axis</td>
+                    <td id="axis">23.4 degrees</td>
+                </tr>
+                <tr>
+                    <td class="index">orbit period</td>
+                    <td id='translation_time'>365 days 6h</td>
+                </tr>
+                <tr>
+                    <td class="index">circumference </td>
+                    <td id="circumference">12,760 km</td>
+                </tr>
+                <tr>
+                    <td class="index">distance from sun </td>
+                    <td id="distance_sun">150,196,428 km</td>
+                </tr>
+                <tr>
+                    <td class="index">one way light<br>time to sun </td>
+                    <td id="one_way_light">8.350022 min</td>
+                </tr>
+                <tr>
+                    <td class="index">atmosphere</td>
+                    <td id="atmosphere">78% N, 21% O, and 1% Ar, CO₂, Ne</td>
+                </tr>
+                <tr>
+                    <td class="index">moons</td>
+                    <td id="moons">1</td>
+                </tr>
+                <tr>
+                    <td class="index">rings</td>
+                    <td id="rings">0</td>
+                </tr>
+            </table>
+            <table id="table_moon_sun">
+                <th>info</th>
+                <tr>
+                    <td class="index">age</td>
+                    <td id="age_sun">4.5 billion years</td>
+                </tr>
+                <tr>
+                    <td class="index">rotation time</td>
+                    <td id="rotation_time_sun">23h 56min</td>
+                </tr>
+                <tr>
+                    <td class="index">axis</td>
+                    <td id="axis_sun">23.4 degrees</td>
+                </tr>
+                <tr>
+                    <td class="index">orbit period</td>
+                    <td id='translation_time_sun'>365 days 6h</td>
+                </tr>
+                <tr>
+                    <td class="index">circumference </td>
+                    <td id="circumference_sun">12,760 km</td>
+                </tr>
+                <tr>
+                    <td class="index">atmosphere</td>
+                    <td id="atmosphere_sun">78% N, 21% O, and 1% Ar, CO₂, Ne</td>
+                </tr>
+            </table>
+        </section>
+        <ul class="facts" id="display_info_holder">
+            <li>
+                <p class="fact_title" id="facts_title1">Not Perfectly Round</p>
+                <p class="fact_info" id="facts1">Earth is not a perfect sphere; it's slightly flattened at the poles and bulges at the equator</p>
+            </li>
+            <li>
+                <p class="fact_title" id="facts_title2">Liquid Water</p>
+                <p class="fact_info" id="facts2">Earth is the only known planet in our solar system with liquid water on the surface</p>
+            </li>
+            <li>
+                <p class="fact_title" id="facts_title3">Unique Name</p>
+                <p class="fact_info" id="facts3">Unlike other planets in our solar system, Earth's name does not come from Greek or Roman mythology; it's derived from Old English and Germanic meaning "the ground"</p>
+            </li>
+            <li>
+                <p class="fact_title" id="facts_title4">Life's Cradle</p>
+                <p class="fact_info" id="facts4">Earth's vast oceans and hospitable temperatures made it a cradle for life to begin around 3.8 billion years ago</p>
+            </li>
+            <li>
+                <p class="fact_title" id="facts_title5">The Moon's Influence</p>
+                <p class="fact_info" id="facts5">The Moon is slowly drifting away from Earth, affecting our planet's tides, rotation, and even the length of our days</p>
+            </li>
+        </ul>
+    </section>
+    <section class="planets_line" id="planets_line">
+        <img src="static/img/sun.png" alt="sun" class="planet_item_line" id="sun_line">
+        <img src="static/img/mercury.png" alt="mercury" class="planet_item_line" id="mercury_line">
+        <img src="static/img/venus.png" alt="venus" class="planet_item_line" id="venus_line">
+        <img src="static/img/earth (2).png" alt="earth" class="planet_item_line" id="earth_line">
+        <img src="static/img/moon.png" alt="moon" class="planet_item_line" id="moon_line">
+        <img src="static/img/mars.png" alt="mars" class="planet_item_line" id="mars_line">
+        <img src="static/img/jupiter.png" alt="jupiter" class="planet_item_line" id="jupiter_line">
+        <img src="static/img/saturn.png" alt="saturn" class="planet_item_line" id="saturn_line">
+        <img src="static/img/uranus.png" alt="uranus" class="planet_item_line" id="uranus_line">
+        <img src="static/img/netuno.png" alt="neptune" class="planet_item_line" id="neptune_line">
+        <img src="static/img/black_hole.png" alt="black_hole" class="planet_item_line" id="black_hole_line">
+        <img src="static/img/andrometa.png" alt="andrometa" class="planet_item_line" id="andrometa_line" style="opacity: 50%;">
+        <img src="static/img/nebula.png" alt="nebula" class="planet_item_line" id="nebula_line" style="opacity: 70%;">
+    </section>
+    <div class="button_pos">
+        <button class="comeback" id="comeback">
+          <span class="tabler--arrow-back-up"></span>
+        </button>
+    </div>
+    <img src="static/img/sun.png" alt="sun" class="sun" id="sun" style="cursor: pointer;">
+    <section class="planet_name" id="title">
+        <h1 class="planet_title" id="planet_text">
+            EARTH
+        </h1>
+    </section>
+    <script>
+        var mercury = document.getElementById('mercury')
+        var mercury_o = document.getElementById('mercury-orbit')
+
+        var venus = document.getElementById('venus')
+        var venus_o = document.getElementById('venus-orbit')
+
+        var earth = document.getElementById('earth')
+        var earth_o = document.getElementById('earth-orbit')
+
+        var mars = document.getElementById('mars')
+        var mars_o = document.getElementById('mars-orbit')
+
+        var jupiter = document.getElementById('jupiter')
+        var jupiter_o = document.getElementById('jupiter-orbit')
+
+        var saturn = document.getElementById('saturn')
+        var saturn_o = document.getElementById('saturn-orbit')
+
+        var uranus = document.getElementById('uranus')
+        var uranus_o = document.getElementById('uranus-orbit')
+
+        var neptune = document.getElementById('neptune')
+        var neptune_o = document.getElementById('neptune-orbit')
+
+        var title = document.getElementById('title');
+        var title_text = document.getElementById("planet_text");
+
+        var sun = document.getElementById('sun')
+        var black_hole = document.getElementById("black_hole")
+        var andrometa = document.getElementById('andrometa')
+        var nebula = document.getElementById('nebula')
+
+
+        var elements = document.body.getElementsByTagName("*")
+
+        var planet_info = document.getElementById('planet_info')
+        var planets_line = document.getElementById('planets_line')
+
+        var close_button = document.getElementById('close_button')
+
+        var text_on = false
+
+        var planet_display = document.getElementById("planet_display");
+        var moon_display = document.getElementById('moon_display')
+
+        var planet_name_show = document.getElementById('planet_name_show');
+        
+        var planet_age = document.getElementById('age')
+        var planet_rotation_time = document.getElementById('rotation_time')
+        var planet_axis = document.getElementById('axis')
+        var planet_translation_time = document.getElementById('translation_time')
+        var planet_circumference = document.getElementById('circumference')
+        var planet_distance_sun = document.getElementById('distance_sun')
+        var planet_one_way_light = document.getElementById('one_way_light')
+        var planet_atmosphere = document.getElementById('atmosphere')
+        var planet_moons = document.getElementById('moons')
+        var planet_rings = document.getElementById('rings')
+
+        var sun_moon_age = document.getElementById('age_sun')
+        var sun_moon_rotation_time = document.getElementById('rotation_time_sun')
+        var sun_moon_axis = document.getElementById("axis_sun")
+        var sun_moon_translation_time = document.getElementById('translation_time_sun')
+        var sun_moon_circumference = document.getElementById('circumference_sun')
+        var sun_moon_atmosphere = document.getElementById('atmosphere_sun')
+
+        var planet_table = document.getElementById('table_planet')
+        var sun_moon_table = document.getElementById("table_moon_sun")
+
+        var sun_line = document.getElementById('sun_line')
+        var mercury_line = document.getElementById('mercury_line')
+        var venus_line = document.getElementById('venus_line')
+        var earth_line = document.getElementById('earth_line')
+        var mars_line = document.getElementById('mars_line')
+        var jupiter_line = document.getElementById('jupiter_line')
+        var saturn_line = document.getElementById('saturn_line')
+        var uranus_line = document.getElementById('uranus_line')
+        var neptune_line = document.getElementById('neptune_line')
+        var black_hole_line = document.getElementById('black_hole_line')
+        var moon_line = document.getElementById('moon_line')
+        var andrometa_line = document.getElementById('andrometa_line')
+        var nebula_line = document.getElementById('nebula_line')
+
+        var display_image_holder = document.getElementById('display_image_holder')
+        var display_table_holder = document.getElementById('display_table_holder')
+        var display_info_holder = document.getElementById("display_info_holder")
+
+        var facts1 = document.getElementById('facts1')
+        var facts_title1 = document.getElementById('facts_title1')
+        var facts2 = document.getElementById('facts2')
+        var facts_title2 = document.getElementById('facts_title2')
+        var facts3 = document.getElementById('facts3')
+        var facts_title3 = document.getElementById('facts_title3')
+        var facts4 = document.getElementById('facts4')
+        var facts_title4 = document.getElementById('facts_title4')
+        var facts5 = document.getElementById('facts5')
+        var facts_title5 = document.getElementById('facts_title5')
+
+        var comeback = document.getElementById('comeback');
+
+        comeback.onclick = function(){
+            window.location.href='index.html';
+        }
+
+        function start_animation(){
+            earth_o.style.animationPlayState = 'running';
+            mercury_o.style.animationPlayState = 'running';
+            venus_o.style.animationPlayState = 'running';
+            mars_o.style.animationPlayState = 'running';
+            saturn_o.style.animationPlayState = 'running';
+            jupiter_o.style.animationPlayState = 'running';
+            uranus_o.style.animationPlayState = 'running';
+            neptune_o.style.animationPlayState = 'running';
+            black_hole.style.animationPlayState = 'running';
+    }
+
+
+        close_button.onclick = function (){
+            if (window.matchMedia("(max-width: 426px)").matches){
+                planet_info.style.animation = 'left_slide_out 2s ease-out forwards';
+                planets_line.style.animation = 'slide_down 2.5s ease-out forwards';
+            } else {
+                planet_info.style.animation = 'left_slide_out 2s ease-out forwards';
+                planets_line.style.animation = 'right_slide_out 2.5s ease-out forwards';
+            }
+            setTimeout(() => planet_info.style.display = 'none', 2500)
+            setTimeout(() => planets_line.style.display = 'none', 2500)
+            setTimeout(() => start_animation(), 1500)
+            setTimeout(() => sun.style.opacity = '100%', 500)
+            text_on = false
+            display_image_holder.style.display = 'none'
+            display_table_holder.style.display = 'none'
+            display_info_holder.style.display = 'none'
+
+        }
+
+
+        var on_hover = false;
+
+        function erase_title(el){
+            setTimeout(() => el.style.display = 'none', 1500)
+
+        }
+        
+        function stop_animation(){
+            if (text_on){
+            earth_o.style.animationPlayState = 'paused';
+            mercury_o.style.animationPlayState = 'paused';
+            venus_o.style.animationPlayState = 'paused';
+            mars_o.style.animationPlayState = 'paused';
+            saturn_o.style.animationPlayState = 'paused';
+            jupiter_o.style.animationPlayState = 'paused';
+            uranus_o.style.animationPlayState = 'paused';
+            neptune_o.style.animationPlayState = 'paused';
+            black_hole.style.animationPlayState = 'paused';
+        }
+    }
+
+    
+        function check_sun(el){
+            el.addEventListener('mouseover', function (e){
+                if (this.id == 'sun'){
+                    title_text.textContent = 'SUN';
+                    title.style.display = 'flex';
+                } else if (this.id == 'black_hole'){
+                    title_text.textContent = 'BLACK HOLE';
+                    title.style.display = 'flex';
+                } else if(this.id == 'andrometa'){
+                    title_text.textContent = 'ANDROMEDA';
+                    title.style.display = 'flex';
+                } else if(this.id == 'nebula'){
+                    title_text.textContent = 'NEBULA';
+                    title.style.display = 'flex';
+                }
+            })
+        }
+
+        function open_info(el){
+            planet_info.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+            display_table_holder.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+            text_on = true
+            display_info_holder.style.top = '120%'
+            display_table_holder.style.opacity = '100%'
+            console.log(el.id)
+            if (el.id == 'earth' || el.id == 'earth_line'){
+                moon_display.style.display = 'inline';
+            } else{
+                moon_display.style.display = 'none';
+            }
+
+            if(el.id == 'mercury' || el.id == 'mercury_line'){
+                planet_table.style.display = 'flex'
+                sun_moon_table.style.display = 'none'
+
+
+                if (el.id == 'mercury'){
+                    setTimeout(() => display_image_holder.style.display = 'flex', 2000)
+                    setTimeout(() => display_info_holder.style.display = 'inline', 2000)
+                    setTimeout(() => display_table_holder.style.display = 'flex', 2000)
+                    } else {
+                        display_table_holder.style.display = 'flex'
+                    }
+                planet_display.src = 'static/img/mercury.png'
+                planet_display.style.width = '30%'
+                planet_name_show.textContent = 'MERCURY'
+
+
+                planet_age.textContent = '4.6 billion years'
+                planet_rotation_time.textContent = '59 days'
+                planet_translation_time.textContent = '88 days'
+                planet_axis.textContent = '2 degrees'
+                planet_circumference.textContent = '15.329 km'
+                planet_distance_sun.textContent = ' 58,000,000 km'
+                planet_one_way_light.textContent = '3.2 min'
+                planet_atmosphere.textContent = '42% O, 29% Na, 22% H₂, 6% He'
+                planet_moons.textContent = '0'
+                planet_rings.textContent = '0'
+
+
+                facts_title1.textContent = 'Closest to the Sun'
+                facts1.textContent = 'Mercury is the closest planet to the Sun in our solar system'
+                facts_title2.textContent = 'Smallest Planet'
+                facts2.textContent = 'Mercury is the smallest planet in the Solar System'
+                facts_title3.textContent = 'Temperature Extremes'
+                facts3.textContent = 'The surface of Mercury facing the Sun experiences temperatures of up to 427°C (800°F), while the alternate side can be as cold as -173°C'
+                facts_title4.textContent = 'No Rings or Moons'
+                facts4.textContent = 'Mercury, along with Venus, is one of the only two planets in our Solar System without either a moon or ring'
+                facts_title5.textContent = 'Fast Orbit'
+                facts5.textContent = 'Mercury revolves around the Sun at a speed of 180,000 kmph, making it the fastest of all planets'
+
+            } else if (el.id == 'venus' || el.id == 'venus_line'){
+                planet_table.style.display = 'flex'
+                sun_moon_table.style.display = 'none'
+
+
+                if (el.id == 'venus'){
+                    setTimeout(() => display_image_holder.style.display = 'flex', 2000)
+                    setTimeout(() => display_info_holder.style.display = 'inline', 2000)
+                    setTimeout(() => display_table_holder.style.display = 'flex', 2000)
+                    } else {
+                        display_table_holder.style.display = 'flex'
+                    }
+                planet_display.src = 'static/img/venus.png'
+                planet_display.style.width = '30%'
+                planet_name_show.textContent = 'VENUS'
+
+                planet_age.textContent = '4.5 billion years'
+                planet_rotation_time.textContent = '243 days'
+                planet_translation_time.textContent = '225 days'
+                planet_axis.textContent = '23 degrees'
+                planet_circumference.textContent = '38.025 km'
+                planet_distance_sun.textContent = ' 108,200,000 km'
+                planet_one_way_light.textContent = '6 min'
+                planet_atmosphere.textContent = '95% CO₂, 3% N'
+                planet_moons.textContent = '0'
+                planet_rings.textContent = '0'
+
+
+                facts_title1.textContent = 'Named After the Goddess of Love and Beauty'
+                facts1.textContent = 'Venus is named after the Roman goddess of love and beauty because it is the brightest planet and was occasionally visible from Earth'
+                facts_title2.textContent = 'No Rings or Moons'
+                facts2.textContent = 'Venus and Mercury are the only planets in the Solar System without either a moon or ring'
+                facts_title3.textContent = 'Hottest Planet in the Solar System'
+                facts3.textContent = 'Venus is significantly warmer than Mercury, even though the latter is much closer to the Sun'
+                facts_title4.textContent = 'Longer Day than Year'
+                facts4.textContent = 'A day on Venus takes 243 Earth days to complete just one rotation, making it longer than a year on Venus, which takes 225 Earth days'
+                facts_title5.textContent = 'Morning/ Evening Star'
+                facts5.textContent = 'Venus is also known as the Morning Star and the Evening Star. Early civilizations thought Venus was two different bodies, which they called Phosphorus and Hesperus (by the Greeks) and Lucifer and Vesper (by the Romans)'
+
+            } else if (el.id == 'earth' || el.id == 'earth_line'){
+
+                planet_table.style.display = 'flex'
+                sun_moon_table.style.display = 'none'
+
+                if (el.id == 'earth'){
+                    setTimeout(() => display_image_holder.style.display = 'flex', 2000)
+                    setTimeout(() => display_info_holder.style.display = 'inline', 2000)
+                    setTimeout(() => display_table_holder.style.display = 'flex', 2000)
+                    } else {
+                        display_table_holder.style.display = 'flex'
+                    }
+                planet_display.src = 'static/img/earth (2).png'
+                planet_display.style.width = '30%'
+                planet_name_show.textContent = 'EARTH'
+
+                planet_age.textContent = '4.5 billion years'
+                planet_rotation_time.textContent = '23h 56min'
+                planet_translation_time.textContent = '365 days 6h'
+                planet_axis.textContent = '23.4 degrees'
+                planet_circumference.textContent = '40,075 km'
+                planet_distance_sun.textContent = ' 150,196,428 km'
+                planet_one_way_light.textContent = '8 min'
+                planet_atmosphere.textContent = '78% N, 21% O, and 1% Ar, CO₂, Ne'
+                planet_moons.textContent = '1'
+                planet_rings.textContent = '0'
+
+                facts_title1.textContent = 'Not Perfectly Round'
+                facts1.textContent = 'Earth isn’t perfectly round; it’s slightly flattened at the poles and bulging at the equator'
+                facts_title2.textContent = 'Days Are Getting Longer'
+                facts2.textContent = 'When Earth first formed 4.6 billion years ago, a day was about six hours long.The moon’s gravitational pull creates tides, which gradually slow down Earth’s rotation. Every 100 years, the day gets 0.0017 seconds longer'
+                facts_title3.textContent = 'Continental Drift'
+                facts3.textContent = 'All the continents we see today were once part of a supercontinent called Pangaea about 250 million years ago. Over time, they’ve moved apart to form the continents we know: North America, South America, Africa, Europe, Asia, Australia, and Antarctica.'
+                facts_title4.textContent = 'Multiple Ice Ages'
+                facts4.textContent = 'Earth has experienced multiple Ice Ages, not just one. During these times, the planet was covered in ice, and woolly mammoths roamed'
+                facts_title5.textContent = 'Gravity Anomalies'
+                facts5.textContent = 'Earth’s gravity isn’t uniform due to its varied features like mountains, oceans, and valleys. These differences are called gravity anomalies'
+
+
+            } else if (el.id == 'mars' || el.id == 'mars_line'){
+                planet_table.style.display = 'flex'
+                sun_moon_table.style.display = 'none'
+
+                if (el.id == 'mars'){
+                    setTimeout(() => display_image_holder.style.display = 'flex', 2000)
+                    setTimeout(() => display_info_holder.style.display = 'inline', 2000)
+                    setTimeout(() => display_table_holder.style.display = 'flex', 2000)
+                    } else {
+                        display_table_holder.style.display = 'flex'
+                    }
+
+                planet_display.src = 'static/img/mars.png'
+                planet_display.style.width = '30%'
+                planet_name_show.textContent = 'MARS'
+
+                planet_age.textContent = '4.5 billion years'
+                planet_rotation_time.textContent = '24h 36min'
+                planet_translation_time.textContent = '687 days 6h'
+                planet_axis.textContent = '25 degrees'
+                planet_circumference.textContent = '21,344 km'
+                planet_distance_sun.textContent = '227.900.000 km'
+                planet_one_way_light.textContent = '12 minutes'
+                planet_atmosphere.textContent = '95% CO₂, 3% N, and 2% Ar'
+                planet_moons.textContent = '2'
+                planet_rings.textContent = '0'
+
+                facts_title1.textContent = 'Red Planet'
+                facts1.textContent = 'Mars is known as the Red Planet because its surface rocks and soil contain small amounts of iron that have rusted over time. Rather than being the Red Planet, perhaps a more appropriate name would be the Rusty Planet'
+                facts_title2.textContent = 'Two Moons'
+                facts2.textContent = 'Mars has two moons: Phobos and Deimos. Phobos has a diameter of 13.7 miles (22 kilometers), while Deimos is smaller with a diameter of 7.7 miles (12.4 kilometers)'
+                facts_title3.textContent = 'Ancient Liquid Water'
+                facts3.textContent = 'Billions of years ago, Mars had a dense atmosphere and a strong greenhouse effect, allowing for the existence of liquid water'
+                facts_title4.textContent = 'Sunsets Are Blue'
+                facts4.textContent = 'Sunsets on Mars appear blue due to the scattering of sunlight by the thin Martian atmosphere'
+                facts_title5.textContent = 'Atmosphere Loss'
+                facts5.textContent = 'Mars once had an atmosphere comparable in density to Earth’s, but today, it is negligible. The lack of a magnetic field likely occurred when Mars’ core solidified, leading to the loss of its atmosphere'
+
+            } else if (el.id == 'jupiter' || el.id == 'jupiter_line'){
+                planet_table.style.display = 'flex'
+                sun_moon_table.style.display = 'none'
+
+                if (el.id == 'jupiter'){
+                    setTimeout(() => display_image_holder.style.display = 'flex', 2000)
+                    setTimeout(() => display_info_holder.style.display = 'inline', 2000)
+                    setTimeout(() => display_table_holder.style.display = 'flex', 2000)
+                    } else {
+                        display_table_holder.style.display = 'flex'
+                    }
+
+                planet_display.src = 'static/img/jupiter.png'
+                planet_display.style.width = '30%'
+                planet_name_show.textContent = 'JUPITER'
+
+                planet_age.textContent = '4.5 billion years'
+                planet_rotation_time.textContent = '10h'
+                planet_translation_time.textContent = '11.86 years'
+                planet_axis.textContent = '3.13 degrees'
+                planet_circumference.textContent = '439.264 km'
+                planet_distance_sun.textContent = '778.500.000 km'
+                planet_one_way_light.textContent = '43 minutes'
+                planet_atmosphere.textContent = '86% H₂, 14% He'
+                planet_moons.textContent = '95'
+                planet_rings.textContent = '4'
+
+                facts_title1.textContent = 'Massive Giant'
+                facts1.textContent = 'Jupiter is the largest planet in our solar system. Its mass is 318 times that of Earth, and it’s 2.5 times more massive than all the other planets combined'
+                facts_title2.textContent = 'Rapid Rotation'
+                facts2.textContent = 'Jupiter spins rapidly, completing a full rotation in just 10 hours'
+                facts_title3.textContent = 'Great Red Spot'
+                facts3.textContent = 'The Great Red Spot is a massive storm on Jupiter that has raged for at least 350 years. It’s so large that three Earths could fit inside it'
+                facts_title4.textContent = 'Largest Moon'
+                facts4.textContent = 'Jupiter’s moon Ganymede is the largest moon in the solar system. Ganymede measures 5,268 km across, even larger than the planet Mercury'
+                facts_title5.textContent = 'Ancient Observations'
+                facts5.textContent = 'The ancient Babylonians recorded sightings of Jupiter around the 7th or 8th century BC. To different cultures, Jupiter represented gods like Zeus, Marduk, and Thor'
+
+            } else if (el.id == 'saturn' || el.id == 'saturn_line'){
+                planet_table.style.display = 'flex'
+                sun_moon_table.style.display = 'none'
+
+                if (el.id == 'saturn'){
+                    setTimeout(() => display_image_holder.style.display = 'flex', 2000)
+                    setTimeout(() => display_info_holder.style.display = 'inline', 2000)
+                    setTimeout(() => display_table_holder.style.display = 'flex', 2000)
+                    } else {
+                        display_table_holder.style.display = 'flex'
+                    }
+
+                planet_display.src = 'static/img/saturn.png'
+                planet_display.style.width = '70%'
+                planet_name_show.textContent = 'SATURN'
+
+                planet_age.textContent = '4.5 billion years'
+                planet_rotation_time.textContent = '10.7 hours'
+                planet_translation_time.textContent = '29.4 years'
+                planet_axis.textContent = '26.73 degrees'
+                planet_circumference.textContent = '378.675 km'
+                planet_distance_sun.textContent = '1.400.000.000 km'
+                planet_one_way_light.textContent = '80 minutes'
+                planet_atmosphere.textContent = '75% H₂, 25% He'
+                planet_moons.textContent = '146'
+                planet_rings.textContent = '7'
+
+                facts_title1.textContent = 'Lighter than Water'
+                facts1.textContent = 'If there were a planet with an ocean large enough to accommodate it, you would think Saturn would float, because its density is only 75 percent that of water'
+                facts_title2.textContent = 'Intense Pressure'
+                facts2.textContent = 'Saturn’s core has about 10 times the mass of Earth, and it’s probably rocky. Pressures are so strong at the interface between the core and the atmosphere that hydrogen condenses into a liquid, which is called metallic hydrogen because it conducts electricity. Underneath the metallic hydrogen, there’s probably a layer of liquid helium'
+                facts_title3.textContent = 'Helium Rain'
+                facts3.textContent = 'Saturn radiates two to three times as much energy as it receives from the Sun. The bulk of this energy comes from friction generated by helium rain. Helium condenses in the cooler upper layers of the atmosphere, and gravity pulls it toward the core. As it falls, it generates heat by rubbing against hydrogen molecules'
+                facts_title4.textContent = 'Rings Around the Planet'
+                facts4.textContent = 'Saturn isn’t the only planet with rings—all the Jovian planets have them—but Saturn’s are especially impressive. They are less than a kilometer (3,200 feet) thick, but they span a distance of 282,000 kilometers (175,000 miles), which is three-quarters of the distance from Earth to the moon'
+                facts_title5.textContent = 'Assyrian Observations'
+                facts5.textContent = 'The Assyrians, who lived in modern-day Iraq, were the first to record sighting Saturn in 700 B.C.. They called the planet the Star of Ninib, after the Assyrian sun god of spring'
+
+
+            } else if (el.id == 'uranus' || el.id == 'uranus_line'){
+                planet_table.style.display = 'flex'
+                sun_moon_table.style.display = 'none'
+
+                if (el.id == 'uranus'){
+                    setTimeout(() => display_image_holder.style.display = 'flex', 2000)
+                    setTimeout(() => display_info_holder.style.display = 'inline', 2000)
+                    setTimeout(() => display_table_holder.style.display = 'flex', 2000)
+                    } else {
+                        display_table_holder.style.display = 'flex'
+                    }
+
+                planet_display.src = 'static/img/uranus.png'
+                planet_display.style.width = '30%'
+                planet_name_show.textContent = 'URANUS'
+
+                planet_age.textContent = '4.5 billion years'
+                planet_rotation_time.textContent = '17 hours'
+                planet_translation_time.textContent = '84 years'
+                planet_axis.textContent = '97.77 degrees'
+                planet_circumference.textContent = '160.590 km'
+                planet_distance_sun.textContent = '1.800.000.000 km'
+                planet_one_way_light.textContent = '160 minutes'
+                planet_atmosphere.textContent = '82% H₂, 15% He and 2% CH4'
+                planet_moons.textContent = '28'
+                planet_rings.textContent = '13'
+
+                facts_title1.textContent = 'Discovery and Naming'
+                facts1.textContent = 'Uranus is the seventh planet from the Sun. It was officially discovered by Sir William Herschel in 1781 using a telescope. Initially, Herschel thought it was a comet, but it was later confirmed as a planet. The name “Uranus” comes from the ancient Greek deity Ouranos'
+                facts_title2.textContent = 'Rotation and Orbit'
+                facts2.textContent = 'Uranus turns on its axis once every 17 hours and 14 minutes. Unlike most planets, it rotates in a retrograde direction, opposite to Earth’s rotation. Uranus completes one trip around the Sun every 84 Earth years'
+                facts_title3.textContent = 'Thin Dark Rings'
+                facts3.textContent = 'Uranus has two sets of very thin dark-colored rings. These rings likely formed when one or more of Uranus’s moons were broken up in an impact'
+                facts_title4.textContent = 'Moons Named After Literary Characters'
+                facts4.textContent = 'Uranus has 27 moons, and they are named after characters created by William Shakespeare and Alexander Pope. These moons include Oberon, Titania, and Miranda'
+                facts_title5.textContent = 'Unique Tilt and Extreme Seasons'
+                facts5.textContent = 'Due to its extreme axial tilt, during parts of its orbit, one of Uranus’s poles points directly at the Sun, receiving about 42 years of direct sunlight'
+
+
+            } else if (el.id == 'neptune' || el.id == 'neptune_line'){
+                planet_table.style.display = 'flex'
+                sun_moon_table.style.display = 'none'
+
+                if (el.id == 'neptune'){
+                    setTimeout(() => display_image_holder.style.display = 'flex', 2000)
+                    setTimeout(() => display_info_holder.style.display = 'inline', 2000)
+                    setTimeout(() => display_table_holder.style.display = 'flex', 2000)
+                    } else {
+                        display_table_holder.style.display = 'flex'
+                    }
+
+                planet_display.src = 'static/img/netuno.png'
+                planet_display.style.width = '30%'
+                planet_name_show.textContent = 'NEPTUNE'
+
+                planet_age.textContent = '4.5 billion years'
+                planet_rotation_time.textContent = '16 hours'
+                planet_translation_time.textContent = '165 years'
+                planet_axis.textContent = '28 degrees'
+                planet_circumference.textContent = '155.600 km'
+                planet_distance_sun.textContent = '2.800.000.000 km'
+                planet_one_way_light.textContent = '240 minutes'
+                planet_atmosphere.textContent = '80% H₂, 19% He and 2% CH4'
+                planet_moons.textContent = '16'
+                planet_rings.textContent = '6'
+
+                facts_title1.textContent = 'Discovery and Naming'
+                facts1.textContent = 'Neptune is the eighth planet from the Sun. It was officially discovered by Sir William Herschel in 1781 using a telescope. The planet was the last to be discovered as it was not visible to the naked eye. Neptune is named after the Roman god of the sea because of its bluish appearance'
+                facts_title2.textContent = 'Planetary Rings'
+                facts2.textContent = 'Neptune has five rings (Adam, Galle, Arago, Lassell, and Le Verrier). These rings are difficult to see compared to Saturn’s bold and bright rings'
+                facts_title3.textContent = 'No Solid Surface'
+                facts3.textContent = 'Because Neptune is a gas giant, there is no solid surface for a spacecraft to land on. Its composition is mostly gas and ice'
+                facts_title4.textContent = 'Unique Appearance'
+                facts4.textContent = 'Neptune’s distinct blue color sets it apart from other planets. Its mysterious storms and icy features continue to intrigue astronomers and space enthusiasts alike'
+                facts_title5.textContent = 'Ice Giant and Densest Gas Giant'
+                facts5.textContent = 'Neptune is the smallest of the ice giants and the most dense of the gas giants. It lacks a solid surface and has a dynamic climate'
+
+
+            } else if (el.id == 'sun' || el.id == 'sun_line'){
+                planet_table.style.display = 'none'
+                sun_moon_table.style.display = 'flex'
+
+                if (el.id == 'sun'){
+                    setTimeout(() => display_image_holder.style.display = 'flex', 2000)
+                    setTimeout(() => display_info_holder.style.display = 'inline', 2000)
+                    setTimeout(() => display_table_holder.style.display = 'flex', 2000)
+                    } else {
+                        display_table_holder.style.display = 'flex'
+                    }
+                planet_display.src = 'static/img/sun.png'
+                planet_display.style.width = '40%'
+                planet_name_show.textContent = 'SUN'
+
+                sun_moon_age.textContent = '4.6 billion years'
+                sun_moon_atmosphere.textContent = '92% H₂, 8% He'
+                sun_moon_axis.textContent = '7.25 degrees'
+                sun_moon_circumference.textContent = '4,370,006 km'
+                sun_moon_rotation_time.textContent = '27 days'
+                sun_moon_translation_time.textContent = '225 million years'
+
+                facts_title1.textContent = 'Origin'
+                facts1.textContent = 'The Sun formed 4.6 billion years ago in a giant, spinning cloud of gas and dust called the solar nebula. This nebula originated from the explosion of another star in the Milky Way'
+                facts_title2.textContent = 'Size'
+                facts2.textContent = 'The Sun is about 100 times wider than Earth and approximately 10 times wider than Jupiter, the largest planet'
+                facts_title3.textContent = 'Solar Flares'
+                facts3.textContent = 'Solar flares are sudden explosions of energy caused by tangled magnetic field lines near sunspots. These flares release radiation into space and can affect communications on Earth'
+                facts_title4.textContent = 'Helios'
+                facts4.textContent = 'Helios, the Greek god, personifies the Sun. The prefix or suffix “helio” is used in words related to the Sun'
+                facts_title5.textContent = 'Temperature Variations'
+                facts5.textContent = 'The hottest part of the Sun is its core, where temperatures reach 27 million degrees Fahrenheit (15 million degrees Celsius) due to nuclear fusion'
+
+            } else if(el.id == 'moon_display' || el.id == 'moon_line'){
+                planet_table.style.display = 'none'
+                sun_moon_table.style.display = 'flex'
+
+                if (el.id == 'moon_display'){
+                    setTimeout(() => display_image_holder.style.display = 'flex', 2000)
+                    setTimeout(() => display_info_holder.style.display = 'inline', 2000)
+                    setTimeout(() => display_table_holder.style.display = 'flex', 2000)
+                    } else {
+                        display_table_holder.style.display = 'flex'
+                    }
+                planet_display.src = 'static/img/moon.png'
+                planet_display.style.width = '30%'
+                planet_name_show.textContent = 'MOON'
+
+                sun_moon_age.textContent = '4.5 billion years'
+                sun_moon_atmosphere.textContent = '43% O₂, 20% Si, 19% Mg, 10% Fe '
+                sun_moon_axis.textContent = '1.53 degrees'
+                sun_moon_circumference.textContent = '10.921 km'
+                sun_moon_rotation_time.textContent = '27.3 days'
+                sun_moon_translation_time.textContent = '29 days'
+
+                facts_title1.textContent = 'The Moon always shows Earth the same face'
+                facts1.textContent = 'The Moon is in synchronous rotation with Earth. Its near side is marked by large dark plains (volcanic ‘maria’) that fill the spaces between the bright ancient crustal highlands and the prominent impact craters'
+                facts_title2.textContent = 'The Moon’s surface is actually dark'
+                facts2.textContent = 'Although compared to the night sky it appears very bright, with a reflectance just slightly higher than that of worn asphalt. Its gravitational influence produces the ocean tides, body tides, and the slight lengthening of the day'
+                facts_title3.textContent = 'The Moon is drifting away from the Earth'
+                facts3.textContent = 'The Moon is moving approximately 3.8 cm away from our planet every year'
+                facts_title4.textContent = 'The Moon was made when a rock smashed into Earth'
+                facts4.textContent = 'The most widely-accepted explanation is that the Moon was created when a rock the size of Mars slammed into Earth, shortly after the solar system began forming about 4.5 billion years ago'
+                facts_title5.textContent = 'The Moon makes the Earth move as well as the tides'
+                facts5.textContent = 'Everyone knows that the Moon is partly responsible for causing the tides of our oceans and seas on Earth, with the Sun also having an effect. However, as the Moon orbits the Earth it also causes a tide of rock to rise and fall in the same way as it does with the water. The effect is not as dramatic as with the oceans, but nevertheless it is a measurable effect, with the solid surface of the Earth moving by several centimetres with each tide'
+                
+            } else if(el.id == 'black_hole' || el.id == 'black_hole_line'){
+                planet_table.style.display = 'none'
+                sun_moon_table.style.display = 'none'
+                display_info_holder.style.top = '65%'
+
+                setTimeout(() => display_image_holder.style.display = 'flex', 2000)
+                setTimeout(() => display_info_holder.style.display = 'inline', 2000)
+                setTimeout(() => display_table_holder.style.display = 'none', 50)
+                
+                planet_display.src = 'static/img/black_hole.png'
+                planet_display.style.width = '40%'
+                planet_name_show.textContent = 'BLACK HOLE'
+
+                facts_title1.textContent = 'Inescapable Gravity'
+                facts1.textContent = 'Black holes have such strong gravitational pulls that not even light can escape once it crosses the event horizon'
+                facts_title2.textContent = 'Stellar Origins'
+                facts2.textContent = 'Many black holes form from the remnants of a large star that has ended its life cycle'
+                facts_title3.textContent = 'Spaghettification'
+                facts3.textContent = ' If you get too close to a black hole, you would be stretched out like spaghetti due to the immense gravitational gradient'
+                facts_title4.textContent = 'Invisible Entities'
+                facts4.textContent = 'Black holes cannot be observed directly. Scientists study them by observing their effects on nearby stars and gas'
+                facts_title5.textContent = 'Singularity'
+                facts5.textContent = 'At the center of a black hole lies the singularity, a point where density is infinite and volume is zero, challenging our understanding of physics'
+
+            } else if (el.id == 'andrometa' || el.id == 'andrometa_line'){
+                planet_table.style.display = 'none'
+                sun_moon_table.style.display = 'none'
+                display_info_holder.style.top = '65%'
+
+                setTimeout(() => display_image_holder.style.display = 'flex', 2000)
+                setTimeout(() => display_info_holder.style.display = 'inline', 2000)
+                setTimeout(() => display_table_holder.style.display = 'none', 50)
+                
+                planet_display.src = 'static/img/andrometa.png'
+                planet_display.style.width = '40%'
+                planet_name_show.textContent = 'ANDROMEDA'
+
+                facts_title1.textContent = 'Largest in the Local Group'
+                facts1.textContent = 'Andromeda is the largest galaxy in the Local Group, which also includes the Milky Way and about 54 other smaller galaxies'
+                facts_title2.textContent = 'Distance'
+                facts2.textContent = 'Andromeda is approximately 2.54 million light-years away from Earth, making it the most distant object visible to the naked eye'
+                facts_title3.textContent = 'Massive Scale'
+                facts3.textContent = 'The galaxy spans about 220,000 light-years across, which is more than twice the size of the Milky Way'
+                facts_title4.textContent = 'Collision Course'
+                facts4.textContent = 'In about 4.5 billion years, Andromeda is expected to collide with the Milky Way, potentially forming a new galaxy'
+                facts_title5.textContent = 'Black Hole Abundance'
+                facts5.textContent = 'The galaxy is teeming with black holes, including a supermassive one at its center with a mass of 100 million times that of the sun'
+
+            } else if (el.id == 'nebula' || el.id == 'nebula_line'){
+                planet_table.style.display = 'none'
+                sun_moon_table.style.display = 'none'
+                display_info_holder.style.top = '65%'
+
+                setTimeout(() => display_image_holder.style.display = 'flex', 2000)
+                setTimeout(() => display_info_holder.style.display = 'inline', 2000)
+                setTimeout(() => display_table_holder.style.display = 'none', 50)
+                
+                planet_display.src = 'static/img/nebula.png'
+                planet_display.style.width = '40%'
+                planet_name_show.textContent = 'NEBULA'
+
+                facts_title1.textContent = 'Cosmic Clouds'
+                facts1.textContent = 'Nebulas are vast clouds of gas and dust floating in space, often referred to as the “nurseries” of stars'
+                facts_title2.textContent = 'Varied Composition'
+                facts2.textContent = 'They are composed of hydrogen, helium, and other ionized gases'
+                facts_title3.textContent = 'Ethereal Beauty'
+                facts3.textContent = 'Nebulas are known for their breathtaking beauty, exhibiting vibrant colors and intricate structures'
+                facts_title4.textContent = 'Visible to the Naked Eye'
+                facts4.textContent = 'Some nebulas, such as the Orion Nebula, can be seen without the aid of telescopes or binoculars'
+                facts_title5.textContent = 'Colorful Displays'
+                facts5.textContent = 'The colors of a nebula come from the ionization of gases by nearby stars, which emit light in red, blue, and green hues'
+
+            }
+            if (window.matchMedia("(max-width: 426px)").matches) {
+                planet_info.style.animation = 'slide_left 2s ease-out forwards';
+                planets_line.style.animation = 'slide_up 2.5s ease-out forwards';
+            } else{
+            planet_info.style.animation = 'slide_left 2s ease-out forwards';
+            planets_line.style.animation = 'slide_right 2.5s ease-out forwards';
+            }
+            planet_info.style.display = 'inline-block';
+            planets_line.style.display = 'flex';
+
+            for (var c = 0; c<elements.length; c++){
+                if (elements[c].id == 'planet_info' || elements[c].id == 'planets_line'){
+                    elements[c].style.opacity = '100%';
+                } else if(elements[c].id == 'space_sky'){
+                    elements[c].style.opacity = '30%';
+                } else if(elements[c].id == 'title'){
+                    erase_title(elements[c]);
+                } else if(elements[c].id == 'sun'){
+                    elements[c].style.opacity = '50%'
+                }
+                setTimeout(() => stop_animation(), 12000) 
+                }
+            
+        }
+
+        moon_display.onclick = function(){
+            open_info(moon_display)
+        }
+        sun.onclick = function(){
+            open_info(sun)
+        }
+        mercury.onclick = function(){
+            open_info(mercury)
+        }
+        venus.onclick = function(){
+            open_info(venus)
+        }
+        earth.onclick = function(){
+            open_info(earth)
+        }
+        mars.onclick = function(){
+            open_info(mars)
+        }
+        saturn.onclick = function(){
+            open_info(saturn)
+        }
+        neptune.onclick = function(){
+            open_info(neptune)
+        }
+        uranus.onclick = function(){
+            open_info(uranus)
+        }
+        jupiter.onclick = function(){
+            open_info(jupiter)
+        }
+
+        black_hole.onclick = function(){
+            open_info(black_hole)
+        }
+        andrometa.onclick = function(){
+            open_info(andrometa)
+        }
+        nebula.onclick = function(){
+            open_info(nebula)
+        }
+
+
+        sun_line.onclick = function(){
+            open_info(sun_line)
+        }
+
+        mercury_line.onclick = function(){
+            open_info(mercury_line)
+        }
+        venus_line.onclick = function(){
+            open_info(venus_line)
+        }
+        earth_line.onclick = function(){
+            open_info(earth_line)
+        }
+        moon_line.onclick = function(){
+            open_info(moon_line)
+        }
+        mars_line.onclick = function(){
+            open_info(mars_line)
+        }
+        jupiter_line.onclick = function(){
+            open_info(jupiter_line)
+        }
+        saturn_line.onclick = function(){
+            open_info(saturn_line)
+        }
+        uranus_line.onclick = function(){
+            open_info(uranus_line)
+        }
+        neptune_line.onclick = function(){
+            open_info(neptune_line)
+        }
+        black_hole_line.onclick = function(){
+            open_info(black_hole_line)
+        }
+        andrometa_line.onclick = function(){
+            open_info(andrometa_line)
+        }
+        nebula_line.onclick = function(){
+            open_info(nebula_line)
+        }
+
+
+
+
+        function check_if_hover(el, el_o){
+            el.addEventListener('mouseover', function (e) {
+                on_hover = true;
+                el_o.style.animationPlayState = 'paused';
+                if (this.id == 'earth'){
+                    title_text.textContent = 'EARTH';
+                } else if (this.id == 'mercury'){
+                    title_text.textContent = 'MERCURY';
+                } else if (this.id == 'venus'){
+                    title_text.textContent = 'VENUS';
+                } else if (this.id == 'mars'){
+                    title_text.textContent = 'MARS';
+                } else if (this.id == 'jupiter'){
+                    title_text.textContent = 'JUPITER';
+                } else if (this.id == 'saturn'){
+                    title_text.textContent = 'SATURN';
+                } else if (this.id == 'uranus'){
+                    title_text.textContent = 'URANUS';
+                } else if (this.id == 'neptune'){
+                    title_text.textContent = 'NEPTUNE';
+                }
+                title.style.display = 'flex';
+            });
+            el.addEventListener('mouseout', function (e) {
+                setTimeout(() => el_o.style.animationPlayState = 'running', 10000)
+                on_hover = false;
+            })
+        }
+
+        check_if_hover(earth, earth_o)
+        check_if_hover(venus, venus_o)
+        check_if_hover(mars, mars_o)
+        check_if_hover(jupiter, jupiter_o)
+        check_if_hover(saturn, saturn_o)
+        check_if_hover(uranus, uranus_o)
+        check_if_hover(neptune, neptune_o)
+        check_if_hover(mercury, mercury_o)
+        check_sun(sun)
+        check_sun(black_hole)
+        check_sun(andrometa)
+        check_sun(nebula)
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap" rel="stylesheet">
+</head>
+<body class="beach">
+    <div>
+      <img src="static/img/cloud1.png" class="cloud" alt="">
+    </div>
+    <div class="button_pos">
+      <button class="comeback" id="comeback">
+        <span class="tabler--arrow-back-up"></span>
+      </button>
+    </div>
+    <section class="title">
+      <div class="jolly-lodger-regular title">
+        <p>Beach Paradise</p>
+      </div>
+    </section>
+    <button class="takedown" id="takedown" disabled>
+      read more
+    </button>
+    <section class="ondas-box" style="display: flex">
+        <div class="onda" id="onda1"></div>
+        <div class="onda" id="onda2"></div>
+        <div class="onda" id="onda3"></div>
+        <div class="onda" id="onda4"></div>
+        <div class="onda" id="onda5"></div>
+      </section>
+
+      <div>
+        <img src="static/img/island.png" class="island">
+      </div>
+      <div class="water"></div>
+      <script>
+        let takedown = document.getElementById('takedown');
+        var elements = document.body.getElementsByTagName("*");
+        let body = document.querySelector("body");
+        let text = document.getElementsByClassName("text_mar");
+        let text_sea = document.getElementsByClassName("text_undersea");
+        var comeback = document.getElementById('comeback');
+
+        comeback.onclick = function(){
+          window.location.href='index.html';
+      }
+
+        function erase_canvas(){
+          for (var i = 0; i<elements.length; i++){
+              elements[i].style.display = 'none';
+          }
+          window.location.href='undersea.html';
+
+        }
+
+        takedown.onclick = function(){
+          let ondas = document.getElementsByClassName('onda');
+          let water = document.getElementsByClassName('water');
+          for (var i = 0; i<ondas.length; i++){
+            ondas[i].style.animation = 'mar_raising 10s ease-in-out';
+            ondas[i].style.animationFillMode = 'forwards';
+          }
+          water[0].style.display= 'flex';
+          water[0].style.bottom = 0;
+          water[0].style.animation = 'water_raising 10s ease-in-out';
+          water[0].style.animationFillMode = 'forwards';
+          setTimeout(() => erase_canvas(), 10000);
+        }
+
+
+        function sea_moviment (){
+            let water = document.getElementsByClassName('water');
+            let ondas = document.getElementsByClassName('onda');
+            takedown.disabled = false;
+            for (var i = 0; i<ondas.length; i++){
+              ondas[i].style.animation = 'mar_moviment 5s ease-in-out infinite alternate';
+              ondas[i].style.bottom = "0%";
+              if (ondas[i].id == 'onda2'){
+                ondas[i].style.animationDelay = '4s';
+              } else if (ondas[i].id == 'onda3'){
+                ondas[i].style.animationDelay = '3s';
+              } else if(ondas[i].id == 'onda4'){
+                ondas[i].style.animationDelay = '2s';
+              } else if(ondas[i].id == 'ondas5'){
+                ondas[i].style.animationDelay = '1s';
+              }
+            }
+            water[0].style.display= 'none';
+        }
+
+        setTimeout(() => sea_moviment(), 10000);
+
+      </script>
+</body>
+</html>

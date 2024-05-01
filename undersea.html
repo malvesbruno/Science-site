@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/style.css" />
+    <script defer src="static/js/app.js"></script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+          }
+           
+        ::-webkit-scrollbar-track {
+            background: linear-gradient(#26549a, #1e4278, #1e4278,#193663, #193663, #152e53, #10223d,#0c1a2f, #08111e,#010203);
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          }
+           
+        ::-webkit-scrollbar-thumb {
+            background-color: #4082e56f;
+            border-radius: 10px;
+          }
+    </style>
+</head>
+<body class="undersea">
+    <section class="over">
+        <button class="comeback" id="comeback">
+            <span class="tabler--arrow-back-up"></span>
+        </button>
+    </section>
+    <section class="hidden show">
+        <img class="water_effect element-hidden" src="static/img/sea_foam.png" alt="" height="auto" width="110%" style="position: absolute; z-index:-1; left: 0%; top: -7%; opacity: 10%;">
+        <h1>Under Sea</h1>
+    </section>
+    <section class="hidden show">
+        <img class="water_effect element-hidden" src="static/img/earth.png" alt="" height="100%" width="auto" style="position: absolute; z-index:-1; left: 0%; top: 0%; opacity: 20%">
+        <p>The ocean covers 71% of the Earth's surface. It also holds about 96.5% of all Earth's water – that's a volume of 320 million cubic miles! The globe would be 29% bigger if all the water were removed</p>
+    </section>
+    <section class="hidden show">
+        <p>
+            The ocean is home to over 230,000 known species of fish, which is more than all the other types of animals on land combined
+        </p>
+        <img class="right_moviment element-hidden" src="static/img/fish6.png" alt="" height="auto" width="120px" style="position: absolute; z-index:-1; left: 0vh; top: 10%; opacity: 0%;">
+        <img class="right_moviment element-hidden" src="static/img/fish1.png" alt="" height="200px" width="200px" style="position: absolute; z-index:-1; left:0vh; top: 40%; opacity: 0%;">
+        <img class="left_moviment element-hidden" src="static/img/fish2.png" alt="" height="400px" width="400px" style="position: absolute; z-index:-1; left: -10%; top: 40%; opacity: 0%">
+        <img class="left_moviment element-hidden" src="static/img/fish2.png" alt="" height="300px" width="300px" style="position: absolute; z-index:-1; right: -10%; top: 80%; opacity: 0%">
+        <img class="left_moviment element-hidden" src="static/img/fish5.png" alt="" height="auto" width="100px" style="position: absolute; z-index:-1; right: 20%; top: 15%; opacity: 0%">
+        <img class="right_moviment element-hidden" src="static/img/shark.png" alt="" height="600px" width="600px" style="position: absolute; z-index:-1; left: 0vh; bottom: 20%; opacity: 0%">
+    </section>
+    <section class="hidden show">
+        <p>
+            The ocean is also home to many other creatures, such as whales, dolphins, sea turtles, and jellyfish
+        </p>
+        <img class="left_moviment element-hidden" src="static/img/whale.png" alt="" height="auto" width="1000px" style="position: absolute; z-index:-1; right: -20%; top: 30%; opacity: 0%;">
+        <img class="right_moviment element-hidden" src="static/img/dolphin.png" alt="" height="auto" width="500px" style="position: absolute; z-index:-1; left: 0vh; bottom: 70%; opacity: 0%;">
+        <img class="left_moviment element-hidden" src="static/img/turtle.png" alt="" height="auto" width="100px" style="position: absolute; z-index:-1; left: -10vh; top: 80%; opacity: 0%;">
+        <img class="right_moviment element-hidden" src="static/img/jellyfish.png" alt="" height="150px" width="auto" style="position: absolute; z-index:-1; left: -15%; top: 30%; opacity: 0%;">
+    </section>
+    <section class="hidden show">
+        <img class="bubble element-hidden" src="static/img/lotOfBubbles.png" alt="" height="auto" width="40%" style="position: absolute; z-index:-1; left: 10%; top: -5%; opacity: 0%;">
+        <img class="bubble element-hidden" src="static/img/lotOfBubbles2.png" alt="" height="100px" width="100px" style="position: absolute; z-index:-1; left: 5%; top: -10%; opacity: 0%;">
+        <img class="bubble element-hidden" src="static/img/lotOfBubbles2.png" alt="" height="auto" width="40%" style="position: absolute; z-index:-1; left: 60%; top: 5%; opacity: 0%;">
+        <img class="bubble element-hidden" src="static/img/lotOfBubbles2.png" alt="" height="150px" width="150px" style="position: absolute; z-index:-1; left: 50%; top: 5%; opacity: 0%;">
+        <img class="bubble element-hidden" src="static/img/lotOfBubbles.png" alt="" height="200px" width="200px" style="position: absolute; z-index:-1; left: 38%; top: 8%; opacity: 0%;">
+        <img class="bubble element-hidden" src="static/img/bubble2.png" alt="" height="150px" width="150px" style="position: absolute; z-index:-1; left: 55%; top: 10%; opacity: 0%;">
+        <p>
+            The ocean plays a vital role in the Earth's climate, regulating the temperature and weather patterns. It also provides food and oxygen for us and other living things
+        </p>
+    </section>
+    <section class="hidden show">
+        <p>
+            The deepest point in the ocean is the Mariana Trench, which is over 36,000 feet deep. That's deeper than Mount Everest is tall!
+        </p>
+    </section>
+    <section class="hidden show" id="Mariana Trench">
+        <img class="water_effect element-hidden" src="static/img/Fossa.png" alt="" height="300%" width="150%" style="position: absolute; z-index:6; left: -25%; bottom: 0; opacity: 3%;" id="img_fossa">
+        <p>
+            The ocean is still a largely unexplored place, and there is much that we don't know about it. However, scientists are constantly learning new things about the ocean, and it is one of the most fascinating places on Earth.
+        </p>
+        <div class="eyes" onclick="eyes_trigged()" style="cursor: pointer;">
+            <div class="eye"></div>
+            <div class="eye"></div>
+        </div>
+        </button>
+        <img src="static/img/shark ‐ Feito com o Clipchamp.gif" class="in_shadow" width="100%" height="100%" style="position: absolute; left:0%; top:0%; opacity: 100%">
+    </section>
+    <script>
+        var eyes = document.querySelectorAll('.eyes');
+        var section_trigged = document.getElementById('Mariana Trench');
+        var comeback = document.getElementById('comeback');
+
+        console.log(comeback)
+
+
+        comeback.onclick = function(){
+            window.location.href='sea.html';
+        }
+
+        var conter = 0
+
+        function end_attack(){
+            var sec_elm = section_trigged.getElementsByTagName("*");
+            console.log(sec_elm);
+            for (var c =0; c<sec_elm.length; c++){
+                if (sec_elm[c].classList.contains("in_shadow")){
+                    sec_elm[c].classList.remove('attack');
+                } else{
+                    sec_elm[c].style.opacity = '100%';
+                    if (sec_elm[c].id == 'img_fossa'){
+                        sec_elm[c].style.opacity = '3%';
+                    }
+                };
+            comeback.style.opacity = '100%';
+        }};
+
+        function eyes_trigged(){
+            if (conter < 2){
+                console.log('trigged');
+                
+            conter += 1
+            } else{
+                console.log('monster attack');
+                comeback.style.opacity = '0%';
+                var sec_elm = section_trigged.getElementsByTagName("*");
+                for (var c =0; c<sec_elm.length; c++){
+                    if (sec_elm[c].classList.contains("in_shadow")){
+                        sec_elm[c].classList.toggle('attack');
+                    } else{
+                        sec_elm[c].style.opacity = '0%';
+                    }
+                    setTimeout(() => end_attack(), 2000);
+                    conter = 0;
+                };
+            };
+        };
+    </script>
+</body>
+</html>

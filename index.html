@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body>
+    <div class="wire"></div>
+    <div class="bulb">
+      <span></span>
+      <span></span>
+    </div>
+    <div class="switch">
+      <div class="btn"></div>
+    </div>
+    <div class="menubar">
+      <div class="sheet">
+        <button class="btn" onclick="mar()" id="mar_btn">
+          <img src="static/img/ondas-do-mar.png" width="35" , height="35" />
+        </button>
+        <button class="btn">
+          <img src="static/img/buraco-negro.png" width="35" , height="35" />
+        </button>
+        <button class="btn">
+          <img
+            src="static/img/cidade-inteligente.png"
+            width="35"
+            ,
+            height="35"
+          />
+        </button>
+      </div>
+    </div>
+    <section class="ondas-box">
+      <div class="onda" id="onda1"></div>
+      <div class="onda" id="onda2"></div>
+      <div class="onda" id="onda3"></div>
+      <div class="onda" id="onda4"></div>
+    </section>
+    <div class="water"></div>
+    <audio id="audio" src="click.mp3" autostart="false"></audio>
+    <script>
+      let btn = document.querySelector(".btn");
+      let body = document.querySelector("body");
+      let audio = document.querySelector("#audio");
+      let menu = document.querySelector(".menubar");
+      let mar_btn = document.querySelector("#mar_btn")
+
+      let on_off = false;
+      let con = 0;
+      var elements = document.body.getElementsByTagName("*");
+
+      if (con == 0) {
+        document.querySelector(".menubar").style.opacity = "0";
+        con += 1;
+      }
+
+      mar_btn.onclick = function() {
+        body.classList.remove("on");
+        body.classList.toggle("mar");
+        document.querySelector(".menubar").style.opacity = "1";
+        
+        document.querySelector(".bulb").style.animation = 'fadeDown .4s ease forwards 5s';
+        document.querySelector('.wire').style.animation = 'fadeDown .4s ease forwards 6s';
+        document.querySelector('.switch').style.animation = 'fadeDown .4s ease forwards 7s';
+        
+
+          document.querySelector(".menubar").style.animation =
+            "fadeDown .4s ease forwards .1s";
+        document.querySelector('.ondas-box').style.display = "flex";
+        let ondas = document.getElementsByClassName("onda")
+        for (var i = 0; i < ondas.length; i++){
+            ondas[i].style.display = "flex";
+        }
+        document.querySelector('.water').style.display = 'flex';
+        setTimeout(() => window.location.href='sea.html', 10000);
+      }
+
+      btn.onclick = function () {
+        on_off = !on_off;
+        audio.play();
+        if (on_off) {
+          document.querySelector(".menubar").style.opacity = "0";
+          document.querySelector(".menubar").style.animation =
+            "slideUp .8s ease forwards .5s";
+        } else if (!on_off) {
+          document.querySelector(".menubar").style.opacity = "1";
+          document.querySelector(".menubar").style.animation =
+            "fadeDown .4s ease forwards .1s";
+        }
+        body.classList.toggle('on');
+      };
+    </script>
+  </body>
+</html>
