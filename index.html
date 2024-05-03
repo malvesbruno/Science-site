@@ -17,10 +17,10 @@
     </div>
     <div class="menubar">
       <div class="sheet">
-        <button class="btn" onclick="mar()" id="mar_btn">
+        <button class="btn" id="mar_btn">
           <img src="static/img/ondas-do-mar.png" width="35" , height="35" />
         </button>
-        <button class="btn">
+        <button class="btn" id="space_btn">
           <img src="static/img/buraco-negro.png" width="35" , height="35" />
         </button>
         <button class="btn">
@@ -33,6 +33,10 @@
         </button>
       </div>
     </div>
+    <img src="static/img/ovini.gif" alt="ovini" class="ovini">
+    <div class="abdution">
+    </div>
+    <div class="abdution_outlight"></div>
     <section class="ondas-box">
       <div class="onda" id="onda1"></div>
       <div class="onda" id="onda2"></div>
@@ -47,6 +51,7 @@
       let audio = document.querySelector("#audio");
       let menu = document.querySelector(".menubar");
       let mar_btn = document.querySelector("#mar_btn")
+      let space_btn = document.getElementById('space_btn')
 
       let on_off = false;
       let con = 0;
@@ -55,6 +60,13 @@
       if (con == 0) {
         document.querySelector(".menubar").style.opacity = "0";
         con += 1;
+      }
+
+      space_btn.onclick = function(){
+        document.querySelector('.abdution').style.display = 'flex';
+        document.querySelector('.abdution_outlight').style.display = 'flex';
+        document.querySelector('.ovini').style.display = 'flex';
+        setTimeout(() => window.location.href='space.html', 8000);
       }
 
       mar_btn.onclick = function() {

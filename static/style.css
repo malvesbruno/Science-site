@@ -22,7 +22,132 @@ body{
 
 }
 
+#undersea_earth{
+    height:100%;
+    width: auto;
+    position: absolute;
+    z-index:-1;
+    left: 0%;
+    top: 0%;
+    opacity: 20%;
+}
 
+#fish1{
+    height:auto;
+    width:120px; 
+    position: absolute;
+    z-index:-1; 
+    left: 0vh; 
+    top: 10%; 
+    opacity: 0%;
+}
+
+#fish2{
+    height:200px; 
+    width:200px; 
+    position: absolute; 
+    z-index:-1; 
+    left:0vh; 
+    top: 40%; 
+    opacity: 0%;
+}
+
+#fish3{
+    height:400px; 
+    width:400px; 
+    position: absolute; 
+    z-index:-1; 
+    left: -10%; 
+    top: 40%; 
+    opacity: 0%
+}
+
+#fish4{
+    height:300px; 
+    width:300px; 
+    position: absolute; 
+    z-index:-1; 
+    right: -10%; 
+    top: 80%; 
+    opacity: 0%
+}
+
+#fish5{
+    height:auto; 
+    width:100px;
+    position: absolute; 
+    z-index:-1; 
+    right: 20%; 
+    top: 15%; 
+    opacity: 0%
+}
+
+#shark{
+    height:600px; 
+    width:600px; 
+    position: absolute; 
+    z-index:-1; 
+    left: 0vh; 
+    bottom: 20%;
+    opacity: 0%
+}
+
+#whale{
+    width:1000px;
+    height: auto; position: absolute;
+    z-index:-1; 
+    right: -20%; 
+    top: 30%; 
+    opacity: 0%;
+}
+
+#dolphin{
+    height:auto; width:500px;
+    position: absolute; 
+    z-index:-1; 
+    left: 0vh; 
+    bottom: 70%; 
+    opacity: 0%; 
+}
+
+#turtle{
+    height:auto; width:100px; 
+    position: absolute;
+     z-index:-1; 
+     left: -10vh; 
+     top: 80%; 
+     opacity: 0%;
+}
+
+#jellyfish{
+    height:150px; 
+    width:auto; 
+    position: absolute;
+    z-index:-1;
+     left: -15%;
+      top: 30%;
+       opacity: 0%;
+}
+
+#img_fossa{
+    height:300%; 
+    width:150%; 
+    position: absolute; 
+    z-index:6; 
+    left: -25%; 
+    bottom: 0; 
+    opacity: 3%;
+}
+
+#sea_foam{
+    width:110%; 
+    height: auto;
+    position: absolute; 
+    z-index:-1; 
+    left: 0%; 
+    top: -7%; 
+    opacity: 10%;
+}
 
 body.on{
     background: radial-gradient(#555, #111);
@@ -295,36 +420,6 @@ body.space .planets_line::-webkit-scrollbar-thumb:hover {
     top: -20%;
     filter: drop-shadow(0px 0px 5px rgb(3, 3, 52));
 }
-
-
-
-
-@media screen and (max-width: 768px) and (min-width: 426px){
-    body.space .planets_line{
-        width: 10%;
-    }
-
-    body.space .planet_info{
-        width: 90%;
-    }
-
-    .sun{
-        position: absolute;
-        width: 6%;
-        left: 47%;
-        z-index: 10;
-        filter: drop-shadow(0px 0px 80px #ffff00)
-        drop-shadow(0px 0px 70px #ffff00)
-        drop-shadow(0px 0px 60px #ffff00)
-        drop-shadow(0px 0px 10px #eb0000);
-    }
-    
-    .sun:hover{
-        width: 8%;
-        left: 46%;
-    }
-}
-
 
 
 body.space section span{
@@ -861,6 +956,7 @@ body.space .planet_title{
 
 
 body.undersea{
+    width: 100%;
     display: inline;
     background: #152e54;
     padding: 0;
@@ -1088,24 +1184,33 @@ body.undersea section h1{
 
 @keyframes right_moviment {
     0%{
+        display: flex;
         opacity: 30%;
-        transform: translate(-100vh, 0vh);
+        transform: translate(-100%, 0%);
+    }
+    99%{
+        transform: translate(0%, -20%);
     }
     100%{
-        opacity: 30%;
-        transform: translate(200vh, -20vh);
+        display: none;
     }
 
 }
 
 @keyframes left_moviment {
     0%{
+        display: flex;
+        opacity: 0%;
+        transform: translate(0%, 0%);
+    }
+    5%{
         opacity: 30%;
-        transform: translate(180vh, 0vh);
+    }
+    99%{
+        transform: translate(-200%, 20%)
     }
     100%{
-        opacity: 30%;
-        transform: translate(-280vh, 20vh)
+        display: none;
     }
 
 }
@@ -1422,6 +1527,90 @@ body.on .bulb::after{
 }
 
 
+.ovini{
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    width: 1%;
+    height: auto;
+    bottom: 90%;
+    left: 90%;
+    filter: brightness(0.2) drop-shadow(0 10px 10px #7d81ff62);
+    animation: ovini_moviment 10s forwards;
+}
+
+.abdution{
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    width: 0.1%;
+    height: 110%;
+    bottom: 0;
+    background: #7d81ff00;
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    animation: abdution 2s forwards;
+    animation-delay: 6s;
+  }
+
+  .abdution_outlight{
+    display: none;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background: #7d81ff00;
+    animation: abdution_outlight 2s forwards;
+    animation-delay: 6s;
+  }
+
+
+@keyframes abdution_outlight {
+    0%{
+        background: #7d81ff00;
+    }
+    100%{
+        background: #7d81fffb;
+    }
+}
+
+@keyframes abdution {
+    0%{
+        width: 0;
+        background: #7d81ff00;
+    }
+    40%{
+        width: 100%;
+        clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+        background: rgba(125, 129, 255, 0.284);
+    }
+    70%{
+        background: rgba(125, 129, 255, 0.559);
+    }
+    100%{
+        width: 100%;
+        background: #7d81ffee;
+        
+    }
+    
+}
+
+@keyframes ovini_moviment {
+    0%{
+        transform: translate(0, 0);
+    }
+    40%{
+        transform: translate(-300%, 100%);
+        width: 30%;
+    }
+    99%{
+        transform: translate(5%, -90%);
+        width: 60%;
+    }
+    100%{
+        display: none;
+    }
+}
+
 
 
 .in_shadow{
@@ -1655,6 +1844,147 @@ body.on .bulb span:nth-child(2){
         overflow-x: hidden;
     }
 
+    #undersea_earth{
+        height:auto;
+        width: 100%;
+        position: absolute;
+        z-index:-1;
+        left: 0%;
+        top: 0%;
+        opacity: 20%;
+    }
+
+    #fish1{
+        height:auto;
+        width:120px; 
+        position: absolute;
+        z-index:-1; 
+        left: 0%; 
+        top: 10%; 
+        opacity: 0%;
+    }
+    
+    #fish2{
+        height:200px; 
+        width:200px; 
+        position: absolute; 
+        z-index:-1; 
+        left: 0%; 
+        top: 40%; 
+        opacity: 0%;
+    }
+    
+    #fish3{
+        height:400px; 
+        width:400px; 
+        position: absolute; 
+        z-index:-1; 
+        left: 100%; 
+        top: 40%; 
+        opacity: 0%
+    }
+    
+    #fish4{
+        height:300px; 
+        width:300px; 
+        position: absolute; 
+        z-index:-1; 
+        right: 100%; 
+        top: 80%; 
+        opacity: 0%
+    }
+    
+    #fish5{
+        height:auto; 
+        width:100px;
+        position: absolute; 
+        z-index:-1; 
+        right: 100%; 
+        top: 15%; 
+        opacity: 0%
+    }
+    
+    #shark{
+        height:600px; 
+        width:600px; 
+        position: absolute; 
+        z-index:-1; 
+        left: 0%; 
+        bottom: 20%;
+        opacity: 0%
+    }
+    
+    #whale{
+        width:1000px;
+        height: auto; position: absolute;
+        z-index:-1; 
+        right: 100%; 
+        top: 30%; 
+        opacity: 0%;
+    }
+    
+    #dolphin{
+        height:auto; width:500px;
+        position: absolute; 
+        z-index:-1; 
+        left: 0%; 
+        bottom: 70%; 
+        opacity: 0%; 
+    }
+    
+    #turtle{
+        height:auto; width:100px; 
+        position: absolute;
+         z-index:-1; 
+         left: 100%; 
+         top: 80%; 
+         opacity: 0%;
+    }
+    
+    #jellyfish{
+        height:150px; 
+        width:auto; 
+        position: absolute;
+        z-index:-1;
+         left: 0%;
+          top: 30%;
+           opacity: 0%;
+    }
+    
+    #img_fossa{
+        height:300%; 
+        width:100%; 
+        position: absolute; 
+        z-index:6; 
+        left: 0%; 
+        bottom: 0; 
+        opacity: 3%;
+    }
+    
+    #sea_foam{
+        width:110%; 
+        height: auto;
+        position: absolute; 
+        z-index:-1; 
+        left: -10%; 
+        top: -7%; 
+        opacity: 10%;
+    }
+
+
+    body.beach{
+        overflow: hidden;
+    }
+
+    .island{
+        position: absolute;
+        left: 0%;
+        bottom: 0px;
+        height: 300px;
+        width: auto;
+    }
+
+
     body.undersea section h1{
         font-size: 50px;
     }
@@ -1674,58 +2004,6 @@ body.on .bulb span:nth-child(2){
 
 }
 
-@media screen and (max-width: 426px){
-    html, body{
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        margin: 0;
-        overflow-x: hidden;
-    }
-
-    .menubar{
-        width: 90%;
-    }
-    .takedown{
-        position: absolute;
-        align-items: center;
-        text-align: center;
-        bottom: 30%;
-        width: 40%;
-        font-size: 15px;
-        color: #ffffff;
-        border-radius: 80px;
-        border: 0.1px solid #7fb0fa;
-        padding: 3%;
-        z-index: 1000;
-        background: linear-gradient(#7fb0fa32, #3586FF32, #2865c232);;
-    }
-
-    .takedown:hover{
-        background: linear-gradient(#7fb0fa, #3586FF, #2865c2);
-        color: white;
-        font-size: 15px;
-    }
-    
-    .takedown:active{
-        background: linear-gradient(#7fb0fa, #3586FF, #2865c2);
-        color: white;
-        font-size: 15px;
-    }
-    section.title{
-        padding: 50%;
-        margin-bottom: 10%;
-    }
-    .jolly-lodger-regular p{
-        text-align: center;
-        background: -webkit-linear-gradient(#3586FF, #3586FF, #19407c, #19407c, #3586FF, #3586FF);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        z-index: 1000;
-        font-size: 80px;
-    }
-}
-
 @media screen and (max-width: 1024px) and (min-width: 768px){
     html, body{
         width: 100%;
@@ -1733,6 +2011,145 @@ body.on .bulb span:nth-child(2){
         padding: 0;
         margin: 0;
         overflow-x: hidden;
+    }
+
+    #undersea_earth{
+        height:auto;
+        width: 100%;
+        position: absolute;
+        z-index:-1;
+        left: 0%;
+        top: 0%;
+        opacity: 20%;
+    }
+
+    #fish1{
+        height:auto;
+        width:120px; 
+        position: absolute;
+        z-index:-1; 
+        left: 0%; 
+        top: 10%; 
+        opacity: 0%;
+    }
+    
+    #fish2{
+        height:200px; 
+        width:200px; 
+        position: absolute; 
+        z-index:-1; 
+        left: 0%; 
+        top: 40%; 
+        opacity: 0%;
+    }
+    
+    #fish3{
+        height:400px; 
+        width:400px; 
+        position: absolute; 
+        z-index:-1; 
+        left: 100%; 
+        top: 40%; 
+        opacity: 0%
+    }
+    
+    #fish4{
+        height:300px; 
+        width:300px; 
+        position: absolute; 
+        z-index:-1; 
+        right: 100%; 
+        top: 80%; 
+        opacity: 0%
+    }
+    
+    #fish5{
+        height:auto; 
+        width:100px;
+        position: absolute; 
+        z-index:-1; 
+        right: 100%; 
+        top: 15%; 
+        opacity: 0%
+    }
+    
+    #shark{
+        height:600px; 
+        width:600px; 
+        position: absolute; 
+        z-index:-1; 
+        left: 0%; 
+        bottom: 20%;
+        opacity: 0%
+    }
+    
+    #whale{
+        width:1000px;
+        height: auto; position: absolute;
+        z-index:-1; 
+        right: 100%; 
+        top: 30%; 
+        opacity: 0%;
+    }
+    
+    #dolphin{
+        height:auto; width:500px;
+        position: absolute; 
+        z-index:-1; 
+        left: 0%; 
+        bottom: 70%; 
+        opacity: 0%; 
+    }
+    
+    #turtle{
+        height:auto; width:100px; 
+        position: absolute;
+         z-index:-1; 
+         left: 100%; 
+         top: 80%; 
+         opacity: 0%;
+    }
+    
+    #jellyfish{
+        height:150px; 
+        width:auto; 
+        position: absolute;
+        z-index:-1;
+         left: 0%;
+          top: 30%;
+           opacity: 0%;
+    }
+    
+    #img_fossa{
+        height:300%; 
+        width:100%; 
+        position: absolute; 
+        z-index:6; 
+        left: 0%; 
+        bottom: 0; 
+        opacity: 3%;
+    }
+    
+    #sea_foam{
+        width:110%; 
+        height: auto;
+        position: absolute; 
+        z-index:-1; 
+        left: -10%; 
+        top: -7%; 
+        opacity: 10%;
+    }
+
+    body.beach{
+        overflow: hidden;
+    }
+
+    .island{
+        position: absolute;
+        left: 0%;
+        bottom: 0px;
+        height: 300px;
+        width: auto;
     }
 
     body.space .planets_line{
@@ -1751,6 +2168,147 @@ body.on .bulb span:nth-child(2){
         padding: 0;
         margin: 0;
         overflow-x: hidden;
+    }
+
+    #undersea_earth{
+        height:auto;
+        width: 100%;
+        position: absolute;
+        z-index:-1;
+        left: 0%;
+        top: 0%;
+        opacity: 20%;
+    }
+
+    #fish1{
+        height:auto;
+        width:25%; 
+        position: absolute;
+        z-index:-1; 
+        left: 0%; 
+        top: 10%; 
+        opacity: 0%;
+    }
+    
+    #fish2{
+        height:25%; 
+        width:25%; 
+        position: absolute; 
+        z-index:-1; 
+        left: 0%; 
+        top: 40%; 
+        opacity: 0%;
+    }
+    
+    #fish3{
+        height:35%; 
+        width:35%; 
+        position: absolute; 
+        z-index:-1; 
+        left: 65%; 
+        top: 40%; 
+        opacity: 0%
+    }
+    
+    #fish4{
+        height:30%; 
+        width:30%; 
+        position: absolute; 
+        z-index:-1; 
+        left: 60%; 
+        top: 80%; 
+        opacity: 0%
+    }
+    
+    #fish5{
+        height:auto; 
+        width:20%;
+        position: absolute; 
+        z-index:-1; 
+        left: 80%; 
+        top: 15%; 
+        opacity: 0%
+    }
+    
+    #shark{
+        height:auto; 
+        width:70%; 
+        position: absolute; 
+        z-index:-1; 
+        left: 0%; 
+        bottom: 20%;
+        opacity: 0%
+    }
+    
+    #whale{
+        width:100%;
+        height: auto; position: absolute;
+        z-index:-1; 
+        left: 0%; 
+        top: 30%; 
+        opacity: 0%;
+    }
+    
+    #dolphin{
+        height:auto;
+        width:250px;
+        position: absolute; 
+        z-index:-1; 
+        left: 0%; 
+        bottom: 70%; 
+        opacity: 0%; 
+    }
+    
+    #turtle{
+        height:auto;
+        width:20%; 
+        position: absolute;
+         z-index:-1; 
+         left: 70%; 
+         top: 80%; 
+         opacity: 0%;
+    }
+    
+    #jellyfish{
+        height:75px; 
+        width:auto; 
+        position: absolute;
+        z-index:-1;
+         left: 0%;
+          top: 30%;
+           opacity: 0%;
+    }
+    
+    #img_fossa{
+        height:300%; 
+        width:100%; 
+        position: absolute; 
+        z-index:6; 
+        left: 0%; 
+        bottom: 0; 
+        opacity: 3%;
+    }
+    
+    #sea_foam{
+        width:110%; 
+        height: auto;
+        position: absolute; 
+        z-index:-1; 
+        left: -10%; 
+        top: -7%; 
+        opacity: 10%;
+    }
+
+    body.beach{
+        overflow: hidden;
+    }
+
+    .island{
+        position: absolute;
+        left: 0%;
+        bottom: 0px;
+        height: 300px;
+        width: auto;
     }
 
     body.space .planets_line{
@@ -1871,4 +2429,225 @@ body.on .bulb span:nth-child(2){
         top: 5%;
         filter: drop-shadow(0px 0px 5px rgb(3, 3, 52));
     }
+
+
+    body.beach{
+        overflow: hidden;
     }
+
+    .island{
+        position: absolute;
+        left: 0%;
+        bottom: 0px;
+        height: 300px;
+        width: auto;
+    }
+
+    .menubar{
+        width: 90%;
+    }
+    .takedown{
+        position: absolute;
+        align-items: center;
+        text-align: center;
+        bottom: 30%;
+        width: 40%;
+        font-size: 15px;
+        color: #ffffff;
+        border-radius: 80px;
+        border: 0.1px solid #7fb0fa;
+        padding: 3%;
+        z-index: 1000;
+        background: linear-gradient(#7fb0fa32, #3586FF32, #2865c232);;
+    }
+
+    .takedown:hover{
+        background: linear-gradient(#7fb0fa, #3586FF, #2865c2);
+        color: white;
+        font-size: 15px;
+    }
+    
+    .takedown:active{
+        background: linear-gradient(#7fb0fa, #3586FF, #2865c2);
+        color: white;
+        font-size: 15px;
+    }
+    section.title{
+        padding: 50%;
+        margin-bottom: 10%;
+    }
+    .jolly-lodger-regular p{
+        text-align: center;
+        background: -webkit-linear-gradient(#3586FF, #3586FF, #19407c, #19407c, #3586FF, #3586FF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        z-index: 1000;
+        font-size: 80px;
+    }
+    }
+
+    @media screen and (max-width: 769px) and (min-width: 426px){
+        body.space .planets_line{
+            width: 10%;
+        }
+    
+        body.space .planet_info{
+            width: 90%;
+        }
+    
+        #undersea_earth{
+            height:auto;
+            width: 100%;
+            position: absolute;
+            z-index:-1;
+            left: 0%;
+            top: 0%;
+            opacity: 20%;
+        }
+    
+        #fish1{
+            height:auto;
+            width:120px; 
+            position: absolute;
+            z-index:-1; 
+            left: 0%; 
+            top: 10%; 
+            opacity: 0%;
+        }
+        
+        #fish2{
+            height:200px; 
+            width:200px; 
+            position: absolute; 
+            z-index:-1; 
+            left: 0%; 
+            top: 40%; 
+            opacity: 0%;
+        }
+        
+        #fish3{
+            height:400px; 
+            width:400px; 
+            position: absolute; 
+            z-index:-1; 
+            left: 0%; 
+            top: 40%; 
+            opacity: 0%
+        }
+        
+        #fish4{
+            height:300px; 
+            width:300px; 
+            position: absolute; 
+            z-index:-1; 
+            right: 0%; 
+            top: 80%; 
+            opacity: 0%
+        }
+        
+        #fish5{
+            height:auto; 
+            width:100px;
+            position: absolute; 
+            z-index:-1; 
+            right: 0%; 
+            top: 15%; 
+            opacity: 0%
+        }
+        
+        #shark{
+            height:600px; 
+            width:600px; 
+            position: absolute; 
+            z-index:-1; 
+            left: 0%; 
+            bottom: 20%;
+            opacity: 0%
+        }
+        
+        #whale{
+            width:1000px;
+            height: auto; position: absolute;
+            z-index:-1; 
+            right: 100%; 
+            top: 30%; 
+            opacity: 0%;
+        }
+        
+        #dolphin{
+            height:auto; width:500px;
+            position: absolute; 
+            z-index:-1; 
+            left: 0%; 
+            bottom: 70%; 
+            opacity: 0%; 
+        }
+        
+        #turtle{
+            height:auto;
+             width:10%; 
+            position: absolute;
+             z-index:-1; 
+             left: 90%; 
+             top: 80%; 
+             opacity: 0%;
+        }
+        
+        #jellyfish{
+            height:150px; 
+            width:auto; 
+            position: absolute;
+            z-index:-1;
+             left: 0%;
+              top: 30%;
+               opacity: 0%;
+        }
+        
+        #img_fossa{
+            height:300%; 
+            width:100%; 
+            position: absolute; 
+            z-index:6; 
+            left: 0%; 
+            bottom: 0; 
+            opacity: 3%;
+        }
+        
+        #sea_foam{
+            width:110%; 
+            height: auto;
+            position: absolute; 
+            z-index:-1; 
+            left: -10%; 
+            top: -7%; 
+            opacity: 10%;
+        }
+    
+        .sun{
+            position: absolute;
+            width: 6%;
+            left: 47%;
+            z-index: 10;
+            filter: drop-shadow(0px 0px 80px #ffff00)
+            drop-shadow(0px 0px 70px #ffff00)
+            drop-shadow(0px 0px 60px #ffff00)
+            drop-shadow(0px 0px 10px #eb0000);
+        }
+        
+        .sun:hover{
+            width: 8%;
+            left: 46%;
+        }
+    
+        .eyes{
+            display: inline-flex;
+            justify-content: space-between;
+            height: 200px;
+            width: 80px;
+            top: 65%;
+            left: 45%;
+            position: absolute;
+            background-color: transparent;
+        }
+    }
+    
