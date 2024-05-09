@@ -1514,10 +1514,10 @@ body.undersea section h1{
     0%{
         display: flex;
         opacity: 30%;
-        transform: translate(-100vh, 0%);
+        transform: translate(-100%, 0%);
     }
     99%{
-        transform: translate(200vh, -20%);
+        transform: translate(0%, -20%);
     }
     100%{
         display: none;
@@ -1528,11 +1528,14 @@ body.undersea section h1{
 @keyframes left_moviment {
     0%{
         display: flex;
+        opacity: 0%;
+        transform: translate(0%, 0%);
+    }
+    5%{
         opacity: 30%;
-        transform: translate(100vh, 0%);
     }
     99%{
-        transform: translate(-100vh, 20%)
+        transform: translate(-200%, 20%)
     }
     100%{
         display: none;
