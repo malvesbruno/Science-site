@@ -169,9 +169,7 @@
             EARTH
         </h1>
     </section>
-    <audio id="audio" src="static/sound/switch.mp3" autostart="false"></audio>
     <script>
-        var audio = document.getElementById('audio')
 
         var mercury = document.getElementById('mercury')
         var mercury_o = document.getElementById('mercury-orbit')
@@ -353,7 +351,6 @@
             planet_info.scrollTo({ top: 0, left: 0, behavior: "smooth" })
             display_table_holder.scrollTo({ top: 0, left: 0, behavior: "smooth" })
             text_on = true
-            audio.play()
             display_info_holder.style.top = '120%'
             display_table_holder.style.opacity = '100%'
             console.log(el.id)
