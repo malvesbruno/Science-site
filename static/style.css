@@ -174,6 +174,7 @@ body.space .button_pos{
     left: 0;
 }
 
+
 .sun{
     position: absolute;
     width: 3%;
@@ -213,6 +214,329 @@ body.space{
     src: url(Black\ Future.otf);
 }
 
+@font-face {
+    font-family: 'science_fair';
+    src: url(Science\ Fair\ Light.otf);
+}
+
+@font-face {
+    font-family: 'bebas';
+    src: url(Bebas-Regular.otf);
+}
+
+
+body.evolution{
+    background: #101010;   
+}
+
+body.evolution .button_pos{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+body.evolution .life_form{
+    width: 15%;
+    position: absolute;
+    height: auto;
+    filter: drop-shadow(0px 0px 80px #1673ff41);
+}
+
+body.evolution .ground{
+    position: absolute;
+    height: 5%;
+    width: 20%;
+    background: #98aa7a;
+    bottom: 25%;
+    border-radius: 100%;
+    opacity: 20%;
+    filter: blur(10px);
+}
+
+.iconamoon--arrow-left-2-fill {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' fill-rule='evenodd' d='M15 7a1 1 0 0 0-1.707-.707l-5 5a1 1 0 0 0 0 1.414l5 5A1 1 0 0 0 15 17z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  }
+
+
+body.evolution .pass{
+    position: absolute;
+    right: 35%;
+    height: 10%;
+    width: 5%;
+    background-color: #3e71bd0d;
+    border: none;
+    border-radius: 20%;
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    z-index: 2;
+}
+
+body.evolution .pass:nth-child(1){
+    left: 35%;
+}
+
+body.evolution .pass:nth-child(2){
+    transform: scaleX(-1);
+}
+
+
+body.evolution .pass:hover{
+    background-color: #3e71bd59;
+}
+
+#life_form1, #life_form3{
+    display: none;
+}
+
+body.evolution .side_text{
+    position: absolute;
+    width: 25%;
+    height: 70%;
+    background-color: #317bea0f;
+    border-radius: 5%;
+    right: 5%;
+    top: 25%;
+    box-shadow: 0px 0px 100px #00000024;
+    color: rgba(255, 255, 255, 0.61);
+    text-align:start;
+    font-size: 20px;
+    overflow: hidden;
+    font-family: 'bebas';
+    white-space: pre-line;
+}
+
+
+body.evolution .side_text_content{
+    color: rgba(255, 255, 255, 0.504);
+    text-align: center;
+    font-size: 24px;
+    margin: 5%;
+    margin-top: 0%;
+    overflow: hidden;
+}
+
+
+body.evolution .read_more{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 10%;
+    width: 100%;
+    background: linear-gradient(#12161d00 , #12161D, #12161D, #12161D);
+    font-size: 20px;
+    border: none;
+    font-family: 'science_fair';
+    letter-spacing: 2px;
+    color: white;
+    cursor: pointer;
+    backdrop-filter: blur(2px);
+}
+
+body.evolution section span{
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    width: 5px;
+    height: 5px;
+    padding: 20px;
+    left: calc(50% - 20px);
+    top: calc(50% - 20px);
+    background-color: #ffffff00;
+    transform: rotate(90deg);
+    
+}
+
+
+body.evolution .read_less{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 45%;
+    width: 10%;
+    height: 2%;
+    background: #12161D;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+body.evolution::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  body.evolution::-webkit-scrollbar-track {
+    background: #f1f1f100;
+  }
+  
+  body.evolution::-webkit-scrollbar-thumb {
+    background: #418dff5e;
+    border-radius: 10px;
+    height: 20%;
+  }
+  
+  body.evolution::-webkit-scrollbar-thumb:hover {
+    background: #26569d5e;
+    border-radius: 10px;
+  }
+
+
+body.evolution .read_less:hover{
+    background: #203c5f
+}
+
+
+body.evolution .read_more:hover{
+    background: linear-gradient(#203c5f0a , #203c5f, #203c5f, #203c5f);
+}
+
+
+body.evolution .living_being{
+    position: absolute;
+    color: white;
+    font-family: 'science_fair';
+    bottom: 20%;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+body.evolution .title_era{
+    position: absolute;
+    width: 30%;
+    height: 15%;
+    background: #317bea0f;
+    top: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px solid #3586ff00;
+    border-top: none;
+    box-shadow: 0px 0px 100px #00000024;
+    color: white;
+    display: flex;
+    font-family: 'science_fair';
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+
+}
+
+
+body.evolution .paragraph{
+    color: rgba(255, 255, 255, 0.504);
+    text-align: start;
+    font-size: 24px;
+    text-indent: 50px;
+    margin: 10%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    font-family: 'bebas';
+    white-space: pre-line;
+    text-indent: 50px;
+}
+
+body.evolution .image_paragraph{
+    position: relative;
+    width: 70%;
+    height: auto;
+    margin-bottom: 10%;
+    left: 15%;
+}
+
+@keyframes text_side {
+    100%{
+        top: 90%;
+        right: 0%;
+        width: 100%;
+        height: auto;
+    }
+    
+}
+
+@keyframes text_side_r {
+    0%{
+        top: 90%;
+        right: 0%;
+        width: 100%;
+        height: auto;
+    }
+    100%{
+        top: 25%;
+        right: 5%;
+        width: 25%;
+        height: 70%;
+    }
+    
+}
+
+@keyframes slide_item {
+    100%{
+        transform: translate(-100%, 20%) scale(40%);
+        opacity: 40%;
+    }
+}
+
+
+@keyframes slide_item_reverse {
+    0%{
+        transform: translate(-100%, 20%) scale(40%);
+        opacity: 40%;
+    }
+    100%{
+        transform: translate(0%, 0%) scale(100%);
+        opacity: 100%;
+    }
+}
+
+@keyframes slide_item_out {
+    0%{
+        transform: translate(-100%, 20%) scale(40%);
+        opacity: 40%;
+    }
+    100%{
+        transform: translate(-50%, 25%) scale(10%);
+        opacity: 0%;
+        display: none;
+    }
+}
+
+@keyframes slide_item_out_reverse {
+    0%{
+        transform: translate(-50%, 25%) scale(10%);
+        opacity: 0%;
+        display: none;
+    }
+    100%{
+        transform: translate(-100%, 20%) scale(40%);
+        opacity: 40%;
+    }
+}
+
+@keyframes slide_item_in {
+    100%{
+        transform: translate(100%, 20%) scale(40%);
+        opacity: 0%;
+    }
+}
+
+@keyframes slide_item_in_reverse {
+    0%{
+        transform: translate(100%, 20%) scale(40%);
+        opacity: 0%;
+    }
+    100%{
+        transform: translate(0%, 0%) scale(100%);
+        opacity: 100%;
+    }
+    
+}
+
 
 
 
@@ -244,6 +568,10 @@ body.space .planet_name{
 
 body.space .comeback{
     z-index: 800;
+}
+
+body.evolution .comeback:hover{
+    background-color: #14315d;
 }
 
 body.space .planet_info{
@@ -1461,6 +1789,31 @@ section span{
 }
 
 
+.time_travel{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    animation: time_travelling 2s ease-in-out forwards;
+}
+
+body.evolution .time_travel{
+    display: flex;
+    animation: time_travelling 0.5s ease-in-out forwards;
+    animation-direction: reverse;
+}
+
+@keyframes time_travelling {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+    
+}
+
 
 .bulb{
     position: relative;
@@ -2484,6 +2837,75 @@ body.on .bulb span:nth-child(2){
         z-index: 1000;
         font-size: 80px;
     }
+
+
+    body.evolution .side_text{
+        position: absolute;
+        width: 100%;
+        height: 40%;
+        background-color: #317bea0f;
+        border-radius: 0;
+        top: 90%;
+        left: 0;
+        padding-bottom: 10%;
+        box-shadow: 0px 0px 100px #00000024;
+        color: rgba(255, 255, 255, 0.61);
+        text-align:start;
+        font-size: 20px;
+        overflow: hidden;
+        font-family: 'bebas';
+        white-space: pre-line;
+    }
+
+    body.evolution .pass{
+        position: absolute;
+        right: 20%;
+        height: 10%;
+        width: 10%;
+        background-color: #3e71bd0d;
+        border: none;
+        border-radius: 20%;
+        backdrop-filter: blur(5px);
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    
+
+    body.evolution .pass:nth-child(1){
+        left: 20%;
+    }
+
+    
+
+    body.evolution .life_form{
+        width: 30%;
+        position: absolute;
+        height: auto;
+        filter: drop-shadow(0px 0px 80px #1673ff41);
+    }
+
+    body.evolution .title_era{
+        position: absolute;
+        width: 80%;
+        height: 15%;
+        background: #317bea0f;
+        top: 15%;
+        border-radius: 20px;
+        border: 1px solid #3586ff00;
+        box-shadow: 0px 0px 100px #00000024;
+        color: white;
+        display: flex;
+        font-family: 'science_fair';
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        font-size: 30px;
+        letter-spacing: 2px;
+    
+    }
+
     }
 
     @media screen and (max-width: 769px) and (min-width: 426px){

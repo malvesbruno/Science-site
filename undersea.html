@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>UnderSea</title>
     <link rel="stylesheet" href="static/style.css" />
     <script defer src="static/js/app.js"></script>
     <style>
@@ -84,10 +84,12 @@
         </button>
         <img src="static/img/shark ‐ Feito com o Clipchamp.gif" class="in_shadow" width="100%" height="100%" style="position: absolute; left:0%; top:0%; opacity: 100%">
     </section>
+    <audio id="audio" src="static/sound/shark_roar.mp3" autostart="false"></audio>
     <script>
         var eyes = document.querySelectorAll('.eyes');
         var section_trigged = document.getElementById('Mariana Trench');
         var comeback = document.getElementById('comeback');
+        var audio = document.getElementById('audio');
 
         console.log(comeback)
 
@@ -124,11 +126,13 @@
                 var sec_elm = section_trigged.getElementsByTagName("*");
                 for (var c =0; c<sec_elm.length; c++){
                     if (sec_elm[c].classList.contains("in_shadow")){
+                        audio.play()
                         sec_elm[c].classList.toggle('attack');
                     } else{
                         sec_elm[c].style.opacity = '0%';
                     }
                     setTimeout(() => end_attack(), 2000);
+                    setTimeout(() => audio.stop(), 1900);
                     conter = 0;
                 };
             };

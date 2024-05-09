@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body class="evolution">
+    <button class="pass" onclick="retur()" id="return">
+        <span class="iconamoon--arrow-left-2-fill"></span>
+    </button>
+    <button class="pass" onclick="pass()" id="pass">
+        <span class="iconamoon--arrow-left-2-fill"></span>
+    </button>
+    <div class="button_pos">
+        <button class="comeback" id="comeback">
+          <span class="tabler--arrow-back-up"></span>
+        </button>
+    </div>
+    <img src="static/img/velociraptor.png" alt="life_form" class="life_form" id="life_form1">
+    <img src="static/img/prokaryotes.png" alt="life_form" class="life_form" id="life_form2">
+    <img src="static/img/Archean Eon.jpg" alt="life_form" class="life_form" id="life_form3">
+    <div class="title_era" id="title_area">Archean Eon</div>
+    <section class="side_text" id="side_text">
+        <button class="read_more" onclick="open_info()" id="btn_read">Read More</button>
+        <div class="side_text_content" id="summary">The Archean Eon marks a profound chapter in Earth’s history. It spans from about 4 billion to 2.5 billion years ago, following the Hadean Eon and preceding the Proterozoic Eon. This eon witnessed the formation of Earth’s first stable crust and the emergence of life. During the Archean, the planet was very different from today. The atmosphere was devoid of oxygen and rich in methane, creating a reducing environment. Volcanic activity was rampant, and the Earth’s crust was continuously reshaped by tectonic forces. Despite the harsh conditions, life found a way. The earliest evidence of life, in the form of prokaryotic microbes, dates back to around 3.5 to 3.7 billion years ago
+        </div>
+        <button class="read_less" id="read_less" onclick="close_info()">
+            <span class="iconamoon--arrow-left-2-fill"></span>
+        </button>
+        <p class="paragraph"></p>
+        <p class="paragraph"></p>
+        <p class="paragraph"></p>
+        <p class="paragraph"></p>
+        <p class="paragraph"></p>
+        <p class="paragraph"></p>
+        <img class="image_paragraph" id="image_paragraph">
+    </section>
+    <div class="living_being" id="living_being">Prokaryotes</div>
+    <script>
+        var cont = 0;
+        const life_form1 = document.getElementById("life_form1")
+        const life_form2 = document.getElementById('life_form2')
+        const life_form3 = document.getElementById('life_form3')
+
+        const return_btn = document.getElementById('return')
+        const pass_btn = document.getElementById('pass')
+        const title_area = document.getElementById('title_area')
+        const summary = document.getElementById("summary")
+        const living_being = document.getElementById('living_being')
+
+        const side_text = document.getElementById('side_text')
+        const btn_read = document.getElementById('btn_read')
+        const btn_lread = document.getElementById('read_less')
+        const image_paragraph = document.getElementById('image_paragraph')
+        var paragraphs = document.getElementsByClassName('paragraph')
+        const comeback = document.getElementById("comeback")
+        var x = window.matchMedia("(min-width: 426px)")
+
+
+        comeback.onclick = function(){
+            window.location.href='index.html';
+        }
+
+        function close_info(){
+            btn_read.style.display = 'inline'
+            btn_lread.style.display = 'none'
+            if (x.matches){
+                side_text.style.borderRadius = '5%'
+                side_text.style.animation = 'text_side_r 2s forwards'
+            } else {
+                side_text.style.height = '40%'
+            }
+            summary.style.display = 'flex'
+        }
+
+        function open_info(){
+            btn_read.style.display = 'none'
+            btn_lread.style.display = 'inline'
+            if (x.matches){
+                side_text.style.animation = 'text_side 2s forwards'
+                side_text.style.borderRadius = 0
+            } else {
+                side_text.style.height = 'auto'
+            }
+            summary.style.display = 'none'
+            if (cont ==  0){
+                image_paragraph.src = 'static/img/Archean Eon.jpg'
+                for (var c = 0; c<paragraphs.length; c++){
+                    if (c == 0){
+                        paragraphs[c].textContent = 'The Archean Eon, also known as the Archaean Eon, spans from about 4 billion to 2.5 billion years ago. following the Hadean Eon and preceding the Proterozoic Eon. It is a time when Earth’s crust solidified from its molten state, and the continents began to form.'
+                    } else if(c == 1){
+                        paragraphs[c].textContent = 'Formation of the Earth’s Crust, the start of the Archean Eon is characterized by the cooling of Earth’s surface and the formation of the first stable continental crust. This period saw the appearance of the first sedimentary rocks, indicating the presence of water and the cycling of materials between the Earth’s surface and its atmosphere.'
+                    }  else if(c == 2){
+                        paragraphs[c].textContent = 'Atmospheric and Oceanic Changes, during the Archean, Earth’s atmosphere was vastly different from today’s oxygen-rich environment. It was primarily composed of methane, ammonia, and other gases, with very little free oxygen. The oceans were also forming, likely covering much of the planet’s surface, and were possibly deeper than today’s oceans.'
+                    }  else if(c == 3){
+                        paragraphs[c].textContent = 'Emergence of Life, one of the most significant events of the Archean Eon was the appearance of life. Fossil evidence suggests that primitive life forms, such as prokaryotic microbes from the domain Archaea and bacteria, emerged around 3.5 to 3.7 billion years ago. These early organisms were likely anaerobic, thriving without the need for oxygen.'
+                    }  else if(c == 4){
+                        paragraphs[c].textContent = 'Geological Activity, the Archean landscape was dominated by volcanic activity, with numerous volcanoes releasing gases into the atmosphere and contributing to the formation of the early Earth’s climate. The geology of this eon is marked by greenstone-granite belts, which are rich in minerals and hold significant economic value, including deposits of gold and silver.'
+                    }  else if(c == 5){
+                        paragraphs[c].textContent = 'Transition to the Proterozoic, the end of the Archean Eon led to the Proterozoic Eon, a time of significant geological, atmospheric, and biological changes. The increase in oxygen levels, known as the Great Oxidation Event, would set the stage for more complex life forms to evolve.'
+                    }
+                }
+            } else if (cont == 1){
+                image_paragraph.src = 'static/img/Proterozoic Eon.jpg'
+                for (var c = 0; c<paragraphs.length; c++){
+                    if (c == 0){
+                        paragraphs[c].textContent = 'The Proterozoic Eon represents one of the four major eons of Earth’s geological time scale, extending from about 2.5 billion years ago to 541 million years ago. It follows the Archean Eon and precedes the Phanerozoic Eon, encompassing a vast period of time that witnessed profound changes in the planet’s geology, atmosphere, and biosphere.'
+                    } else if(c == 1){
+                        paragraphs[c].textContent = 'Divisions of the Proterozoic, the Proterozoic is often divided into three eras: the Paleoproterozoic, Mesoproterozoic, and Neoproterozoic. Each era signifies distinct periods of Earth’s evolution, with the Paleoproterozoic marking the onset of the eon, the Mesoproterozoic representing the middle phase, and the Neoproterozoic leading up to the dawn of complex life.'
+                    }  else if(c == 2){
+                        paragraphs[c].textContent = 'Geological Developments, during the Proterozoic, the Earth’s crust continued to differentiate and stabilize. The supercontinent Rodinia began to form, altering the planet’s geography and climate. This was also a time of significant tectonic activity, which played a crucial role in shaping the continents as we know them today.'
+                    }  else if(c == 3){
+                        paragraphs[c].textContent = 'Atmospheric and Oceanic Evolution, one of the most critical events of the Proterozoic was the Great Oxidation Event, which occurred approximately between 2.3 billion and 1.8 billion years ago. This event led to a significant increase in atmospheric oxygen, primarily due to the photosynthetic activity of cyanobacteria. The rise in oxygen levels had far-reaching implications for the planet’s environment and the evolution of life.'
+                    }  else if(c == 4){
+                        paragraphs[c].textContent = 'iological Milestones, the Proterozoic Eon saw the emergence of the first eukaryotic cells, which have a nucleus and other organelles enclosed within membranes. This development paved the way for more complex organisms. By the end of the Proterozoic, the first multicellular life forms, such as the Ediacaran biota, appeared, setting the stage for the Cambrian explosion of life.'
+                    }  else if(c == 5){
+                        paragraphs[c].textContent = 'Economic Significance, pProterozoic rocks are known to contain substantial deposits of metallic ores, including iron, gold, copper, uranium, and nickel. These resources have been vital for human development and continue to be of great economic importance.'
+                    }
+                }
+            } else if (cont == 2){
+                image_paragraph.src = 'static/img/Paleozoic Era.jpg'
+                for (var c = 0; c<paragraphs.length; c++){
+                    if (c == 0){
+                        paragraphs[c].textContent = 'The Paleozoic Era, from the Greek “palaios” (old) and “zoikos” (life), meaning “ancient life,” is a major interval of geologic time that began 538.8 million years ago and ended about 251.9 million years ago. It is the first of three geological eras of the Phanerozoic Eon, succeeding the Neoproterozoic Era and preceding the Mesozoic Era.'
+                    } else if(c == 1){
+                        paragraphs[c].textContent = 'Subdivisions and Periods, the Paleozoic Era is subdivided into six geologic periods: the Cambrian, Ordovician, Silurian, Devonian, Carboniferous, and Permian. These periods represent distinct phases in Earth’s history, each characterized by unique climatic conditions, life forms, and geological events.'
+                    }  else if(c == 2){
+                        paragraphs[c].textContent = 'Cambrian Explosion, the era commenced with the Cambrian explosion, a remarkable diversification of marine animals that saw the emergence of most modern phyla. This event represents one of the most significant evolutionary milestones, as complex life forms began to dominate the planet’s oceans.'
+                    }  else if(c == 3){
+                        paragraphs[c].textContent = 'Development of Terrestrial, life As the Paleozoic progressed, life transitioned onto land. The first terrestrial plants appeared, and by the late Paleozoic, vast forests covered the continents. These forests would later form the coal beds of Europe and North America. The evolution of amphibians and the colonization of land by various arthropods and mollusks marked a significant shift in the biosphere.'
+                    }  else if(c == 4){
+                        paragraphs[c].textContent = 'End of the Paleozoic, the Paleozoic Era culminated in the largest mass extinction event in Earth’s history, the end-Permian extinction, which wiped out a significant proportion of marine and terrestrial species. This event set the stage for the Mesozoic Era, often called the “Age of Reptiles.”'
+                    }  else if(c == 5){
+                        paragraphs[c].textContent = 'Geological and Climatic, changes Throughout the Paleozoic, the Earth underwent considerable geological transformations. The assembly and breakup of the supercontinent Rodinia and the formation of another, Pangea, were key events. Climatic shifts, including ice ages and warmer periods, also played a crucial role in shaping the evolutionary path of life.'
+                    }
+                }
+            } else if (cont == 3){
+                image_paragraph.src = 'static/img/Mesozoic Era.jpg'
+                for (var c = 0; c<paragraphs.length; c++){
+                    if (c == 0){
+                        paragraphs[c].textContent = 'The Mesozoic Era is a major geological period that lasted from about 252.2 million years ago to 66 million years ago. It is the second of Earth’s three major geologic eras of Phanerozoic time, nestled between the Paleozoic and Cenozoic Eras.'
+                    } else if(c == 1){
+                        paragraphs[c].textContent = 'Divisions of the Mesozoic, the era is divided into three periods: \r\n\r\n Triassic Period: This period saw the emergence of the first dinosaurs and mammals;\r\n\r\n Jurassic Period: Marked by the dominance of dinosaurs and the appearance of the first birds;\r\n\r\n Cretaceous Period: The last period of the Mesozoic, which ended with the mass extinction of dinosaurs.\r\n\r\n'
+                    }  else if(c == 2){
+                        paragraphs[c].textContent = 'Geological Developments, during the Mesozoic, the supercontinent Pangea began to break apart, leading to the formation of modern continents and the Atlantic Ocean. This tectonic activity influenced global climate and sea levels, creating diverse habitats.'
+                    }  else if(c == 3){
+                        paragraphs[c].textContent = 'Climate and Environment, the climate of the Mesozoic was generally warmer than today, with less difference in temperature between equatorial and polar latitudes. This warm climate supported lush vegetation and a wide variety of life forms.'
+                    }  else if(c == 4){
+                        paragraphs[c].textContent = 'Flora and Fauna, the Mesozoic is best known for its reptilian inhabitants, particularly the dinosaurs, which became the dominant terrestrial vertebrates. The era also saw the rise of gymnosperms, and later, the first flowering plants, which would eventually dominate the landscape.'
+                    }  else if(c == 5){
+                        paragraphs[c].textContent = 'The Mesozoic Era remains a period of great interest to scientists and the public alike, as it holds the stories of some of the most iconic creatures that have ever lived on our planet.'
+                    }
+                }
+            } else if (cont == 4){
+                image_paragraph.src = 'static/img/Cenozoic Era.jpg'
+                for (var c = 0; c<paragraphs.length; c++){
+                    if (c == 0){
+                        paragraphs[c].textContent = 'The Cenozoic Era, derived from Greek meaning “new life,” is the most recent of the three major eras of Earth’s history. It began approximately 66 million years ago, following the mass extinction event that ended the Mesozoic Era, and continues to the present day.'
+                    } else if(c == 1){
+                        paragraphs[c].textContent = 'Divisions of the Cenozoic, the Cenozoic is traditionally divided into two periods:\r\n\r\n Tertiary Period: This period encompasses the Paleogene and Neogene epochs, covering the time from 66 million to 2.6 million years ago.\r\n\r\n Quaternary Period: Starting 2.6 million years ago and extending to the present, this period includes the Pleistocene and Holocene epochs'
+                    }  else if(c == 2){
+                        paragraphs[c].textContent = 'Geological Changes, the Cenozoic Era witnessed the continents assuming their modern configuration and geographic positions. This era is marked by the stabilization of tectonic plates and the expansion of oceans. Several of the world’s great mountain ranges, such as the Alps, the Himalayas, and the Andes, were formed during this time.'
+                    }  else if(c == 3){
+                        paragraphs[c].textContent = 'Flora and Fauna The Cenozoic is characterized by the diversification of life, with mammals and birds becoming dominant on land. The era also saw the appearance of the first hominids and the evolution of Homo sapiens. The development of grasslands during the Neogene period was significant for the evolution of grazing mammals.'
+                    }  else if(c == 4){
+                        paragraphs[c].textContent = 'Human Evolution One of the most notable events of the Cenozoic was the appearance of humans. The genus Homo, which includes modern humans, evolved in Africa during the late Neogene and spread across the globe, leading to the development of diverse cultures and civilizations.'
+                    }  else if(c == 5){
+                        paragraphs[c].textContent = 'Modern Biodiversity Today’s biodiversity is a result of the evolutionary processes that took place during the Cenozoic. The era has seen the rise and fall of numerous species, but it has ultimately led to the complex ecosystems we observe in the present'
+                    }
+                }
+            }
+        }
+
+        var f_i = true
+
+
+        function pass(){
+            if (cont < 4){
+                cont += 1
+            }
+            console.log(cont)
+            if (cont == 1){
+
+                image_paragraph.src = 'static/img/Proterozoic Eon.jpg'
+                for (var c = 0; c<paragraphs.length; c++){
+                    if (c == 0){
+                        paragraphs[c].textContent = 'The Proterozoic Eon represents one of the four major eons of Earth’s geological time scale, extending from about 2.5 billion years ago to 541 million years ago. It follows the Archean Eon and precedes the Phanerozoic Eon, encompassing a vast period of time that witnessed profound changes in the planet’s geology, atmosphere, and biosphere.'
+                    } else if(c == 1){
+                        paragraphs[c].textContent = 'Divisions of the Proterozoic, the Proterozoic is often divided into three eras: the Paleoproterozoic, Mesoproterozoic, and Neoproterozoic. Each era signifies distinct periods of Earth’s evolution, with the Paleoproterozoic marking the onset of the eon, the Mesoproterozoic representing the middle phase, and the Neoproterozoic leading up to the dawn of complex life.'
+                    }  else if(c == 2){
+                        paragraphs[c].textContent = 'Geological Developments, during the Proterozoic, the Earth’s crust continued to differentiate and stabilize. The supercontinent Rodinia began to form, altering the planet’s geography and climate. This was also a time of significant tectonic activity, which played a crucial role in shaping the continents as we know them today.'
+                    }  else if(c == 3){
+                        paragraphs[c].textContent = 'Atmospheric and Oceanic Evolution, one of the most critical events of the Proterozoic was the Great Oxidation Event, which occurred approximately between 2.3 billion and 1.8 billion years ago. This event led to a significant increase in atmospheric oxygen, primarily due to the photosynthetic activity of cyanobacteria. The rise in oxygen levels had far-reaching implications for the planet’s environment and the evolution of life.'
+                    }  else if(c == 4){
+                        paragraphs[c].textContent = 'iological Milestones, the Proterozoic Eon saw the emergence of the first eukaryotic cells, which have a nucleus and other organelles enclosed within membranes. This development paved the way for more complex organisms. By the end of the Proterozoic, the first multicellular life forms, such as the Ediacaran biota, appeared, setting the stage for the Cambrian explosion of life.'
+                    }  else if(c == 5){
+                        paragraphs[c].textContent = 'Economic Significance, pProterozoic rocks are known to contain substantial deposits of metallic ores, including iron, gold, copper, uranium, and nickel. These resources have been vital for human development and continue to be of great economic importance.'
+                    }
+                }
+
+
+                title_area.textContent = 'Proterozoic Eon'
+                summary.textContent = 'The Proterozoic Eon, a significant era in Earth’s history, spanned from 2.5 billion to 541 million years ago. It is divided into three eras: the Paleoproterozoic, Mesoproterozoic, and Neoproterozoic. This eon was a time of dramatic geological and biological changes that shaped the planet as we know it today. Geologically, the Proterozoic saw the stabilization of the continents and the beginning of plate tectonics. The supercontinent Rodinia formed and later broke apart, altering the face of the planet. The atmosphere and oceans underwent a transformation, with the Great Oxygenation Event marking a significant increase in atmospheric oxygen due to photosynthetic activity. This oxygenation led to the deposition of banded-iron formations and paved the way for more complex life forms'
+                living_being.textContent = 'Eukaryotes'
+
+                return_btn.disabled = true
+                pass_btn.disabled = true
+                setTimeout(() => return_btn.disabled = false, 2000)
+                setTimeout(() => pass_btn.disabled = false, 2000)
+
+                f_i = false
+
+                life_form2.style.animation = 'slide_item 2s linear forwards'
+                life_form3.style.animation = 'slide_item_out 2s linear forwards'
+                life_form1.style.display = 'flex';
+                life_form1.style.animation = 'slide_item_in 2s linear forwards'
+                life_form1.src = 'static/img/eukaryotes.png'
+                life_form1.style.animationDirection = 'reverse'
+            } else if (cont == 2){
+
+                image_paragraph.src = 'static/img/Paleozoic Era.jpg'
+                for (var c = 0; c<paragraphs.length; c++){
+                    if (c == 0){
+                        paragraphs[c].textContent = 'The Paleozoic Era, from the Greek “palaios” (old) and “zoikos” (life), meaning “ancient life,” is a major interval of geologic time that began 538.8 million years ago and ended about 251.9 million years ago. It is the first of three geological eras of the Phanerozoic Eon, succeeding the Neoproterozoic Era and preceding the Mesozoic Era.'
+                    } else if(c == 1){
+                        paragraphs[c].textContent = 'Subdivisions and Periods, the Paleozoic Era is subdivided into six geologic periods: the Cambrian, Ordovician, Silurian, Devonian, Carboniferous, and Permian. These periods represent distinct phases in Earth’s history, each characterized by unique climatic conditions, life forms, and geological events.'
+                    }  else if(c == 2){
+                        paragraphs[c].textContent = 'Cambrian Explosion, the era commenced with the Cambrian explosion, a remarkable diversification of marine animals that saw the emergence of most modern phyla. This event represents one of the most significant evolutionary milestones, as complex life forms began to dominate the planet’s oceans.'
+                    }  else if(c == 3){
+                        paragraphs[c].textContent = 'Development of Terrestrial, life As the Paleozoic progressed, life transitioned onto land. The first terrestrial plants appeared, and by the late Paleozoic, vast forests covered the continents. These forests would later form the coal beds of Europe and North America. The evolution of amphibians and the colonization of land by various arthropods and mollusks marked a significant shift in the biosphere.'
+                    }  else if(c == 4){
+                        paragraphs[c].textContent = 'End of the Paleozoic, the Paleozoic Era culminated in the largest mass extinction event in Earth’s history, the end-Permian extinction, which wiped out a significant proportion of marine and terrestrial species. This event set the stage for the Mesozoic Era, often called the “Age of Reptiles.”'
+                    }  else if(c == 5){
+                        paragraphs[c].textContent = 'Geological and Climatic, changes Throughout the Paleozoic, the Earth underwent considerable geological transformations. The assembly and breakup of the supercontinent Rodinia and the formation of another, Pangea, were key events. Climatic shifts, including ice ages and warmer periods, also played a crucial role in shaping the evolutionary path of life.'
+                    }
+                }
+
+
+                title_area.textContent = 'Paleozoic Era'
+                summary.textContent = 'The Paleozoic Era, also known as the Palaeozoic Era, spans a major interval of geologic time from approximately 542 to 251 million years ago. Derived from the Greek term for “ancient life,” it represents the first era within the Phanerozoic Eon and is succeeded by the Mesozoic Era. Let’s delve into the key highlights of this fascinating period. the Paleozoic Era witnessed the emergence of diverse marine and terrestrial life, pivotal evolutionary events, and dramatic changes in Earth’s ecosystems. It remains a crucial chapter in our planet’s history'
+                living_being.textContent = 'Vertables'
+
+                return_btn.disabled = true
+                pass_btn.disabled = true
+                setTimeout(() => return_btn.disabled = false, 2000)
+                setTimeout(() => pass_btn.disabled = false, 2000)
+
+
+                life_form1.style.animation = 'slide_item 2s linear forwards'
+                life_form2.style.animation = 'slide_item_out 2s linear forwards'
+                life_form3.style.display = 'flex';
+                life_form3.style.animation = 'slide_item_in 2s linear forwards'
+                life_form3.src = 'static/img/vertables.png'
+                life_form3.style.animationDirection = 'reverse'
+            } else if (cont == 3){
+
+                image_paragraph.src = 'static/img/Mesozoic Era.jpg'
+                for (var c = 0; c<paragraphs.length; c++){
+                    if (c == 0){
+                        paragraphs[c].textContent = 'The Mesozoic Era is a major geological period that lasted from about 252.2 million years ago to 66 million years ago. It is the second of Earth’s three major geologic eras of Phanerozoic time, nestled between the Paleozoic and Cenozoic Eras.'
+                    } else if(c == 1){
+                        paragraphs[c].textContent = 'Divisions of the Mesozoic, the era is divided into three periods: \r\n\r\n Triassic Period: This period saw the emergence of the first dinosaurs and mammals;\r\n\r\n Jurassic Period: Marked by the dominance of dinosaurs and the appearance of the first birds;\r\n\r\n Cretaceous Period: The last period of the Mesozoic, which ended with the mass extinction of dinosaurs.\r\n\r\n'
+                    }  else if(c == 2){
+                        paragraphs[c].textContent = 'Geological Developments, during the Mesozoic, the supercontinent Pangea began to break apart, leading to the formation of modern continents and the Atlantic Ocean. This tectonic activity influenced global climate and sea levels, creating diverse habitats.'
+                    }  else if(c == 3){
+                        paragraphs[c].textContent = 'Climate and Environment, the climate of the Mesozoic was generally warmer than today, with less difference in temperature between equatorial and polar latitudes. This warm climate supported lush vegetation and a wide variety of life forms.'
+                    }  else if(c == 4){
+                        paragraphs[c].textContent = 'Flora and Fauna, the Mesozoic is best known for its reptilian inhabitants, particularly the dinosaurs, which became the dominant terrestrial vertebrates. The era also saw the rise of gymnosperms, and later, the first flowering plants, which would eventually dominate the landscape.'
+                    }  else if(c == 5){
+                        paragraphs[c].textContent = 'The Mesozoic Era remains a period of great interest to scientists and the public alike, as it holds the stories of some of the most iconic creatures that have ever lived on our planet.'
+                    }
+                }
+
+
+                title_area.textContent = 'Mesozoic Era'
+                summary.textContent = 'The Mesozoic Era, often referred to as the “Age of Reptiles,” marks a pivotal period in Earth’s history, spanning approximately from 252 to 66 million years ago. This era is divided into three major periods: the Triassic, Jurassic, and Cretaceous. During the Triassic, the supercontinent Pangaea began to rift apart, leading to the formation of the continents as we know them today. This period saw the emergence of the first dinosaurs, which would come to dominate the land for the rest of the Mesozoic'
+                living_being.textContent = 'Reptiles'
+
+                return_btn.disabled = true
+                pass_btn.disabled = true
+                setTimeout(() => return_btn.disabled = false, 2000)
+                setTimeout(() => pass_btn.disabled = false, 2000)
+
+
+                life_form1.style.animation = 'slide_item_out 2s linear forwards'
+                life_form3.style.animation = 'slide_item 2s linear forwards'
+                life_form2.style.display = 'flex'
+                life_form2.style.animation = 'slide_item_in 2s linear forwards'
+                life_form2.src = 'static/img/velociraptor.png'
+                life_form2.style.animationDirection = 'reverse'
+                
+                
+            } else if (cont == 4){
+
+                image_paragraph.src = 'static/img/Cenozoic Era.jpg'
+                for (var c = 0; c<paragraphs.length; c++){
+                    if (c == 0){
+                        paragraphs[c].textContent = 'The Cenozoic Era, derived from Greek meaning “new life,” is the most recent of the three major eras of Earth’s history. It began approximately 66 million years ago, following the mass extinction event that ended the Mesozoic Era, and continues to the present day.'
+                    } else if(c == 1){
+                        paragraphs[c].textContent = 'Divisions of the Cenozoic, the Cenozoic is traditionally divided into two periods:\r\n\r\n Tertiary Period: This period encompasses the Paleogene and Neogene epochs, covering the time from 66 million to 2.6 million years ago.\r\n\r\n Quaternary Period: Starting 2.6 million years ago and extending to the present, this period includes the Pleistocene and Holocene epochs'
+                    }  else if(c == 2){
+                        paragraphs[c].textContent = 'Geological Changes, the Cenozoic Era witnessed the continents assuming their modern configuration and geographic positions. This era is marked by the stabilization of tectonic plates and the expansion of oceans. Several of the world’s great mountain ranges, such as the Alps, the Himalayas, and the Andes, were formed during this time.'
+                    }  else if(c == 3){
+                        paragraphs[c].textContent = 'Flora and Fauna The Cenozoic is characterized by the diversification of life, with mammals and birds becoming dominant on land. The era also saw the appearance of the first hominids and the evolution of Homo sapiens. The development of grasslands during the Neogene period was significant for the evolution of grazing mammals.'
+                    }  else if(c == 4){
+                        paragraphs[c].textContent = 'Human Evolution One of the most notable events of the Cenozoic was the appearance of humans. The genus Homo, which includes modern humans, evolved in Africa during the late Neogene and spread across the globe, leading to the development of diverse cultures and civilizations.'
+                    }  else if(c == 5){
+                        paragraphs[c].textContent = 'Modern Biodiversity Today’s biodiversity is a result of the evolutionary processes that took place during the Cenozoic. The era has seen the rise and fall of numerous species, but it has ultimately led to the complex ecosystems we observe in the present'
+                    }
+                }
+
+
+                title_area.textContent = 'Cenozoic Era'
+                summary.textContent = 'The Cenozoic Era, known as the “Age of Mammals,” is the current geological era, beginning around 66 million years ago and continuing to the present day. It is characterized by the significant evolution and diversification of mammalian life following the extinction of the dinosaurs at the end of the Mesozoic Era. Throughout the Cenozoic, the continents moved into their modern configurations, and the flora and fauna evolved toward those we see today. This era has been a time of climatic changes, which have influenced the evolutionary paths of life on Earth'
+                living_being.textContent = 'Mammals'
+
+                console.log(cont)
+                return_btn.disabled = true
+                pass_btn.disabled = true
+                setTimeout(() => return_btn.disabled = false, 2000)
+                setTimeout(() => pass_btn.disabled = false, 2000)
+
+                life_form3.style.animation = 'slide_item_out 2s linear forwards'
+                life_form2.style.animation = 'slide_item 2s linear forwards'
+                life_form1.style.display = 'flex'
+                life_form1.style.animation = 'slide_item_in 2s linear forwards'
+                life_form1.src = 'static/img/human.png'
+                life_form1.style.animationDirection = 'reverse'
+            }
+        }
+        function retur (){
+            if (cont > 0){
+                cont -= 1
+            }
+            console.log(cont)
+            console.log(f_i)
+            if (cont == 0){
+
+                image_paragraph.src = 'static/img/Archean Eon.jpg'
+                for (var c = 0; c<paragraphs.length; c++){
+                    if (c == 0){
+                        paragraphs[c].textContent = 'The Archean Eon, also known as the Archaean Eon, spans from about 4 billion to 2.5 billion years ago. following the Hadean Eon and preceding the Proterozoic Eon. It is a time when Earth’s crust solidified from its molten state, and the continents began to form.'
+                    } else if(c == 1){
+                        paragraphs[c].textContent = 'Formation of the Earth’s Crust, the start of the Archean Eon is characterized by the cooling of Earth’s surface and the formation of the first stable continental crust. This period saw the appearance of the first sedimentary rocks, indicating the presence of water and the cycling of materials between the Earth’s surface and its atmosphere.'
+                    }  else if(c == 2){
+                        paragraphs[c].textContent = 'Atmospheric and Oceanic Changes, during the Archean, Earth’s atmosphere was vastly different from today’s oxygen-rich environment. It was primarily composed of methane, ammonia, and other gases, with very little free oxygen. The oceans were also forming, likely covering much of the planet’s surface, and were possibly deeper than today’s oceans.'
+                    }  else if(c == 3){
+                        paragraphs[c].textContent = 'Emergence of Life, one of the most significant events of the Archean Eon was the appearance of life. Fossil evidence suggests that primitive life forms, such as prokaryotic microbes from the domain Archaea and bacteria, emerged around 3.5 to 3.7 billion years ago. These early organisms were likely anaerobic, thriving without the need for oxygen.'
+                    }  else if(c == 4){
+                        paragraphs[c].textContent = 'Geological Activity, the Archean landscape was dominated by volcanic activity, with numerous volcanoes releasing gases into the atmosphere and contributing to the formation of the early Earth’s climate. The geology of this eon is marked by greenstone-granite belts, which are rich in minerals and hold significant economic value, including deposits of gold and silver.'
+                    }  else if(c == 5){
+                        paragraphs[c].textContent = 'Transition to the Proterozoic, the end of the Archean Eon led to the Proterozoic Eon, a time of significant geological, atmospheric, and biological changes. The increase in oxygen levels, known as the Great Oxidation Event, would set the stage for more complex life forms to evolve.'
+                    }
+                }
+
+                return_btn.disabled = true
+                pass_btn.disabled = true
+                setTimeout(() => return_btn.disabled = false, 2000)
+                setTimeout(() => pass_btn.disabled = false, 2000)
+
+                title_area.textContent = 'Archean Eon'
+                summary.textContent = 'The Archean Eon marks a profound chapter in Earth’s history. It spans from about 4 billion to 2.5 billion years ago, following the Hadean Eon and preceding the Proterozoic Eon. This eon witnessed the formation of Earth’s first stable crust and the emergence of life. During the Archean, the planet was very different from today. The atmosphere was devoid of oxygen and rich in methane, creating a reducing environment. Volcanic activity was rampant, and the Earth’s crust was continuously reshaped by tectonic forces. Despite the harsh conditions, life found a way. The earliest evidence of life, in the form of prokaryotic microbes, dates back to around 3.5 to 3.7 billion years ago'
+                living_being.textContent = 'Prokaryotes'
+
+                life_form1.src = 'static/img/eukaryotes.png'
+                life_form2.src = 'static/img/prokaryotes.png'
+                life_form3.style.display = 'none'
+
+                life_form1.style.animation = "slide_item_in_reverse 2s linear forwards"
+                life_form1.style.animationDirection = 'reverse'
+                if (f_i == false){
+                    life_form2.style.animation = 'slide_item_reverse 2s linear forwards'
+                    f_i = true
+                }
+            } else if(cont == 1){
+                image_paragraph.src = 'static/img/Proterozoic Eon.jpg'
+                for (var c = 0; c<paragraphs.length; c++){
+                    if (c == 0){
+                        paragraphs[c].textContent = 'The Proterozoic Eon represents one of the four major eons of Earth’s geological time scale, extending from about 2.5 billion years ago to 541 million years ago. It follows the Archean Eon and precedes the Phanerozoic Eon, encompassing a vast period of time that witnessed profound changes in the planet’s geology, atmosphere, and biosphere.'
+                    } else if(c == 1){
+                        paragraphs[c].textContent = 'Divisions of the Proterozoic, the Proterozoic is often divided into three eras: the Paleoproterozoic, Mesoproterozoic, and Neoproterozoic. Each era signifies distinct periods of Earth’s evolution, with the Paleoproterozoic marking the onset of the eon, the Mesoproterozoic representing the middle phase, and the Neoproterozoic leading up to the dawn of complex life.'
+                    }  else if(c == 2){
+                        paragraphs[c].textContent = 'Geological Developments, during the Proterozoic, the Earth’s crust continued to differentiate and stabilize. The supercontinent Rodinia began to form, altering the planet’s geography and climate. This was also a time of significant tectonic activity, which played a crucial role in shaping the continents as we know them today.'
+                    }  else if(c == 3){
+                        paragraphs[c].textContent = 'Atmospheric and Oceanic Evolution, one of the most critical events of the Proterozoic was the Great Oxidation Event, which occurred approximately between 2.3 billion and 1.8 billion years ago. This event led to a significant increase in atmospheric oxygen, primarily due to the photosynthetic activity of cyanobacteria. The rise in oxygen levels had far-reaching implications for the planet’s environment and the evolution of life.'
+                    }  else if(c == 4){
+                        paragraphs[c].textContent = 'iological Milestones, the Proterozoic Eon saw the emergence of the first eukaryotic cells, which have a nucleus and other organelles enclosed within membranes. This development paved the way for more complex organisms. By the end of the Proterozoic, the first multicellular life forms, such as the Ediacaran biota, appeared, setting the stage for the Cambrian explosion of life.'
+                    }  else if(c == 5){
+                        paragraphs[c].textContent = 'Economic Significance, pProterozoic rocks are known to contain substantial deposits of metallic ores, including iron, gold, copper, uranium, and nickel. These resources have been vital for human development and continue to be of great economic importance.'
+                    }
+                }
+
+
+                return_btn.disabled = true
+                pass_btn.disabled = true
+                setTimeout(() => return_btn.disabled = false, 2000)
+                setTimeout(() => pass_btn.disabled = false, 2000)
+                
+                title_area.textContent = 'Proterozoic Eon'
+                summary.textContent = 'The Proterozoic Eon, a significant era in Earth’s history, spanned from 2.5 billion to 541 million years ago. It is divided into three eras: the Paleoproterozoic, Mesoproterozoic, and Neoproterozoic. This eon was a time of dramatic geological and biological changes that shaped the planet as we know it today. Geologically, the Proterozoic saw the stabilization of the continents and the beginning of plate tectonics. The supercontinent Rodinia formed and later broke apart, altering the face of the planet. The atmosphere and oceans underwent a transformation, with the Great Oxygenation Event marking a significant increase in atmospheric oxygen due to photosynthetic activity. This oxygenation led to the deposition of banded-iron formations and paved the way for more complex life forms'
+                living_being.textContent = 'Eukaryotes'
+
+                life_form1.src = 'static/img/eukaryotes.png'
+                life_form2.src = 'static/img/prokaryotes.png'
+                life_form3.src = 'static/img/vertables.png'
+
+
+                life_form3.style.animation = "slide_item_in_reverse 2s linear forwards"
+                life_form3.style.animationDirection = 'reverse'
+                life_form1.style.animation = 'slide_item_reverse 2s linear forwards'
+                life_form2.style.animation = 'slide_item_out_reverse 2s linear forwards'
+            } else if(cont == 2){
+
+                image_paragraph.src = 'static/img/Paleozoic Era.jpg'
+                for (var c = 0; c<paragraphs.length; c++){
+                    if (c == 0){
+                        paragraphs[c].textContent = 'The Paleozoic Era, from the Greek “palaios” (old) and “zoikos” (life), meaning “ancient life,” is a major interval of geologic time that began 538.8 million years ago and ended about 251.9 million years ago. It is the first of three geological eras of the Phanerozoic Eon, succeeding the Neoproterozoic Era and preceding the Mesozoic Era.'
+                    } else if(c == 1){
+                        paragraphs[c].textContent = 'Subdivisions and Periods, the Paleozoic Era is subdivided into six geologic periods: the Cambrian, Ordovician, Silurian, Devonian, Carboniferous, and Permian. These periods represent distinct phases in Earth’s history, each characterized by unique climatic conditions, life forms, and geological events.'
+                    }  else if(c == 2){
+                        paragraphs[c].textContent = 'Cambrian Explosion, the era commenced with the Cambrian explosion, a remarkable diversification of marine animals that saw the emergence of most modern phyla. This event represents one of the most significant evolutionary milestones, as complex life forms began to dominate the planet’s oceans.'
+                    }  else if(c == 3){
+                        paragraphs[c].textContent = 'Development of Terrestrial, life As the Paleozoic progressed, life transitioned onto land. The first terrestrial plants appeared, and by the late Paleozoic, vast forests covered the continents. These forests would later form the coal beds of Europe and North America. The evolution of amphibians and the colonization of land by various arthropods and mollusks marked a significant shift in the biosphere.'
+                    }  else if(c == 4){
+                        paragraphs[c].textContent = 'End of the Paleozoic, the Paleozoic Era culminated in the largest mass extinction event in Earth’s history, the end-Permian extinction, which wiped out a significant proportion of marine and terrestrial species. This event set the stage for the Mesozoic Era, often called the “Age of Reptiles.”'
+                    }  else if(c == 5){
+                        paragraphs[c].textContent = 'Geological and Climatic, changes Throughout the Paleozoic, the Earth underwent considerable geological transformations. The assembly and breakup of the supercontinent Rodinia and the formation of another, Pangea, were key events. Climatic shifts, including ice ages and warmer periods, also played a crucial role in shaping the evolutionary path of life.'
+                    }
+                }
+
+                return_btn.disabled = true
+                pass_btn.disabled = true
+                setTimeout(() => return_btn.disabled = false, 2000)
+                setTimeout(() => pass_btn.disabled = false, 2000)
+
+                title_area.textContent = 'Paleozoic Era'
+                summary.textContent = 'The Paleozoic Era, also known as the Palaeozoic Era, spans a major interval of geologic time from approximately 542 to 251 million years ago. Derived from the Greek term for “ancient life,” it represents the first era within the Phanerozoic Eon and is succeeded by the Mesozoic Era. Let’s delve into the key highlights of this fascinating period. the Paleozoic Era witnessed the emergence of diverse marine and terrestrial life, pivotal evolutionary events, and dramatic changes in Earth’s ecosystems. It remains a crucial chapter in our planet’s history'
+                living_being.textContent = 'Vertables'
+
+                life_form1.src = 'static/img/eukaryotes.png'
+                life_form2.src = 'static/img/velociraptor.png'
+                life_form3.src = 'static/img/vertables.png'
+
+                life_form2.style.animation = "slide_item_in_reverse 2s linear forwards"
+                life_form2.style.animationDirection = 'reverse'
+                life_form3.style.animation = 'slide_item_reverse 2s linear forwards'
+                life_form1.style.animation = 'slide_item_out_reverse 2s linear forwards'
+            } else if(cont == 3){
+
+                image_paragraph.src = 'static/img/Mesozoic Era.jpg'
+                for (var c = 0; c<paragraphs.length; c++){
+                    if (c == 0){
+                        paragraphs[c].textContent = 'The Mesozoic Era is a major geological period that lasted from about 252.2 million years ago to 66 million years ago. It is the second of Earth’s three major geologic eras of Phanerozoic time, nestled between the Paleozoic and Cenozoic Eras.'
+                    } else if(c == 1){
+                        paragraphs[c].textContent = 'Divisions of the Mesozoic, the era is divided into three periods: \r\n\r\n Triassic Period: This period saw the emergence of the first dinosaurs and mammals;\r\n\r\n Jurassic Period: Marked by the dominance of dinosaurs and the appearance of the first birds;\r\n\r\n Cretaceous Period: The last period of the Mesozoic, which ended with the mass extinction of dinosaurs.\r\n\r\n'
+                    }  else if(c == 2){
+                        paragraphs[c].textContent = 'Geological Developments, during the Mesozoic, the supercontinent Pangea began to break apart, leading to the formation of modern continents and the Atlantic Ocean. This tectonic activity influenced global climate and sea levels, creating diverse habitats.'
+                    }  else if(c == 3){
+                        paragraphs[c].textContent = 'Climate and Environment, the climate of the Mesozoic was generally warmer than today, with less difference in temperature between equatorial and polar latitudes. This warm climate supported lush vegetation and a wide variety of life forms.'
+                    }  else if(c == 4){
+                        paragraphs[c].textContent = 'Flora and Fauna, the Mesozoic is best known for its reptilian inhabitants, particularly the dinosaurs, which became the dominant terrestrial vertebrates. The era also saw the rise of gymnosperms, and later, the first flowering plants, which would eventually dominate the landscape.'
+                    }  else if(c == 5){
+                        paragraphs[c].textContent = 'The Mesozoic Era remains a period of great interest to scientists and the public alike, as it holds the stories of some of the most iconic creatures that have ever lived on our planet.'
+                    }
+                }
+
+
+                return_btn.disabled = true
+                pass_btn.disabled = true
+                setTimeout(() => return_btn.disabled = false, 2000)
+                setTimeout(() => pass_btn.disabled = false, 2000)
+
+                title_area.textContent = 'Mesozoic Era '
+                summary.textContent = 'The Mesozoic Era, often referred to as the “Age of Reptiles,” marks a pivotal period in Earth’s history, spanning approximately from 252 to 66 million years ago. This era is divided into three major periods: the Triassic, Jurassic, and Cretaceous. During the Triassic, the supercontinent Pangaea began to rift apart, leading to the formation of the continents as we know them today. This period saw the emergence of the first dinosaurs, which would come to dominate the land for the rest of the Mesozoic'
+                living_being.textContent = 'Reptiles'
+
+                life_form1.src = 'static/img/human.png'
+                life_form2.src = 'static/img/velociraptor.png'
+                life_form3.src = 'static/img/vertables.png'
+
+                life_form1.style.animation = "slide_item_in_reverse 2s linear forwards"
+                life_form1.style.animationDirection = 'reverse'
+                life_form2.style.animation = 'slide_item_reverse 2s linear forwards'
+                life_form3.style.animation = 'slide_item_out_reverse 2s linear forwards'
+            }
+        }
+        
+    </script>
+</body>
+</html>

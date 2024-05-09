@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="static/style.css" />
   </head>
   <body>
@@ -25,14 +25,16 @@
         </button>
         <button class="btn">
           <img
-            src="static/img/cidade-inteligente.png"
+            src="static/img/celulas.png"
             width="35"
             ,
             height="35"
+            id="btn_evolution"
           />
         </button>
       </div>
     </div>
+    <img src="static/img/time-travel.gif" alt="" class="time_travel">
     <img src="static/img/ovini.gif" alt="ovini" class="ovini">
     <div class="abdution">
     </div>
@@ -44,7 +46,7 @@
       <div class="onda" id="onda4"></div>
     </section>
     <div class="water"></div>
-    <audio id="audio" src="click.mp3" autostart="false"></audio>
+    <audio id="audio" src="static/sound/close.mp3" autostart="false"></audio>
     <script>
       let btn = document.querySelector(".btn");
       let body = document.querySelector("body");
@@ -52,6 +54,7 @@
       let menu = document.querySelector(".menubar");
       let mar_btn = document.querySelector("#mar_btn")
       let space_btn = document.getElementById('space_btn')
+      let btn_evolution = document.getElementById('btn_evolution')
 
       let on_off = false;
       let con = 0;
@@ -60,6 +63,11 @@
       if (con == 0) {
         document.querySelector(".menubar").style.opacity = "0";
         con += 1;
+      }
+
+      btn_evolution.onclick = function(){
+        document.querySelector('.time_travel').style.display = 'flex';
+        setTimeout(() => window.location.href='evolution.html', 5000)
       }
 
       space_btn.onclick = function(){
