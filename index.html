@@ -69,6 +69,8 @@
 
       btn_evolution.onclick = function(){
         document.querySelector('.time_travel').style.display = 'flex';
+        wave_audio.src = 'static/sound/Time Travel Effect Test (320).mp3'
+        wave_audio.play();
         setTimeout(() => window.location.href='evolution.html', 5000)
       }
 
@@ -76,6 +78,8 @@
         document.querySelector('.abdution').style.display = 'flex';
         document.querySelector('.abdution_outlight').style.display = 'flex';
         document.querySelector('.ovini').style.display = 'flex';
+        wave_audio.src= 'static/sound/Free UFO Sound Effects - HD Alien Spaceships and Mysterious Noises SFX (320).mp3'
+        wave_audio.play();
         setTimeout(() => window.location.href='space.html', 8000);
       }
 
@@ -97,6 +101,7 @@
             ondas[i].style.display = "flex";
         }
         document.querySelector('.water').style.display = 'flex';
+        wave_audio.src = 'static/sound/Bubbles Sound Effect (320).mp3'
         wave_audio.play();
         setTimeout(() => window.location.href='sea.html', 4000);
       }
