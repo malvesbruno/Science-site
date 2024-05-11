@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sapce</title>
+    <title>Space</title>
     <link rel="stylesheet" href="static/style.css" /> 
 </head>
 <body class="space">
@@ -333,17 +333,18 @@
             el.addEventListener('mouseover', function (e){
                 if (this.id == 'sun'){
                     title_text.textContent = 'SUN';
-                    title.style.display = 'flex';
                 } else if (this.id == 'black_hole'){
                     title_text.textContent = 'BLACK HOLE';
-                    title.style.display = 'flex';
                 } else if(this.id == 'andrometa'){
                     title_text.textContent = 'ANDROMEDA';
-                    title.style.display = 'flex';
                 } else if(this.id == 'nebula'){
                     title_text.textContent = 'NEBULA';
+                }
+                var x = window.matchMedia("(min-width: 426px)")    
+                if (x.matches){
                     title.style.display = 'flex';
                 }
+
             })
         }
 
@@ -942,7 +943,10 @@
                 } else if (this.id == 'neptune'){
                     title_text.textContent = 'NEPTUNE';
                 }
+                var x = window.matchMedia("(min-width: 426px)")
+                if (x.matches){
                 title.style.display = 'flex';
+                }
             });
             el.addEventListener('mouseout', function (e) {
                 setTimeout(() => el_o.style.animationPlayState = 'running', 10000)

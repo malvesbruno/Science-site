@@ -47,10 +47,12 @@
     </section>
     <div class="water"></div>
     <audio id="audio" src="static/sound/close.mp3" autostart="false"></audio>
+    <audio id="wave_audio" src="static/sound/Bubbles Sound Effect (320).mp3" autostart="false"></audio>
     <script>
       let btn = document.querySelector(".btn");
       let body = document.querySelector("body");
       let audio = document.querySelector("#audio");
+      let wave_audio = document.querySelector('#wave_audio')
       let menu = document.querySelector(".menubar");
       let mar_btn = document.querySelector("#mar_btn")
       let space_btn = document.getElementById('space_btn')
@@ -95,7 +97,8 @@
             ondas[i].style.display = "flex";
         }
         document.querySelector('.water').style.display = 'flex';
-        setTimeout(() => window.location.href='sea.html', 10000);
+        wave_audio.play();
+        setTimeout(() => window.location.href='sea.html', 4000);
       }
 
       btn.onclick = function () {

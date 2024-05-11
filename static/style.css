@@ -1601,7 +1601,7 @@ body.undersea section h1{
     background-image: url(img/wave.png);
     background-size: 1000X 100;
     left: 0;
-    animation: mar_raising 10s ease-in-out;
+    animation: mar_raising 3s ease-in-out;
     animation-fill-mode: forwards;
 }
 
@@ -1609,7 +1609,7 @@ body.undersea section h1{
 body.beach .onda{
     display: flex;
     bottom: 100%;
-    animation: mar_decaing 10s ease-in-out;
+    animation: mar_decaing 3s ease-in-out;
     animation-fill-mode: forwards;
 }
 
@@ -1617,7 +1617,7 @@ body.beach .water{
     position: absolute;
     display: flex;
     bottom: 100%;
-    animation: water_decaing 10s ease-in-out;
+    animation: water_decaing 3s ease-in-out;
     animation-fill-mode: forwards;
 }
 
@@ -1677,7 +1677,7 @@ section span{
     bottom: 0;
     background-color: #3586FF;
     z-index: 1001;
-    animation: water_raising 10s ease-in-out;
+    animation: water_raising 3s ease-in-out;
     animation-fill-mode: forwards;
 }
 

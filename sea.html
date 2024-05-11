@@ -38,22 +38,27 @@
         <img src="static/img/island.png" class="island">
       </div>
       <div class="water"></div>
+      <audio id="wave_audio" src="static/sound/Bubbles Sound Effect (320).mp3" autostart="false"></audio>
+      <audio id="ocean_audio" src="static/sound/Sea sound effect (320).mp3" autostart="false" loop></audio>
       <script>
         let takedown = document.getElementById('takedown');
         var elements = document.body.getElementsByTagName("*");
         let body = document.querySelector("body");
+        let wave_audio = document.querySelector('#wave_audio')
+        let ocean_audio = document.querySelector('#ocean_audio')
         let text = document.getElementsByClassName("text_mar");
         let text_sea = document.getElementsByClassName("text_undersea");
         var comeback = document.getElementById('comeback');
+
+        wave_audio.play()
+        setTimeout(() => wave_audio.pause(), 3000)
+        ocean_audio.play()
 
         comeback.onclick = function(){
           window.location.href='index.html';
       }
 
         function erase_canvas(){
-          for (var i = 0; i<elements.length; i++){
-              elements[i].style.display = 'none';
-          }
           window.location.href='undersea.html';
 
         }
@@ -62,14 +67,15 @@
           let ondas = document.getElementsByClassName('onda');
           let water = document.getElementsByClassName('water');
           for (var i = 0; i<ondas.length; i++){
-            ondas[i].style.animation = 'mar_raising 10s ease-in-out';
+            ondas[i].style.animation = 'mar_raising 3s ease-in-out';
             ondas[i].style.animationFillMode = 'forwards';
           }
           water[0].style.display= 'flex';
           water[0].style.bottom = 0;
-          water[0].style.animation = 'water_raising 10s ease-in-out';
+          water[0].style.animation = 'water_raising 3s ease-in-out';
           water[0].style.animationFillMode = 'forwards';
-          setTimeout(() => erase_canvas(), 10000);
+          wave_audio.play()
+          setTimeout(() => erase_canvas(), 4000);
         }
 
 
@@ -93,7 +99,7 @@
             water[0].style.display= 'none';
         }
 
-        setTimeout(() => sea_moviment(), 10000);
+        setTimeout(() => sea_moviment(), 4000);
 
       </script>
 </body>
